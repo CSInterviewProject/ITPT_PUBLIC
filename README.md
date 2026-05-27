@@ -4,9 +4,6 @@ CS 면접 대비를 위한 웹 서비스.
 질문 제공 → 답변(STT) 기록 → AI 피드백/점수화 → 기록/분석  
 흐름으로 연습할 수 있도록 지원합니다.
 
-> 현재 구현 기준(2026-04): `client(React)` + `server(Spring Boot)` + `mysql` 구조로 동작하며,  
-> 본 프로젝트는 해당 구성을 최종 아키텍처로 사용합니다.
-
 ---
 
 <details open>
@@ -155,51 +152,6 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
 </code></pre>
 
 </details>
-
----
-
-## Production HTTPS Deploy (Mic enabled)
-
-`getUserMedia` works only in a secure context (`https://` or `localhost`).
-If you open the deployed site with plain `http://` (or raw IP over HTTP), the browser blocks microphone access.
-
-### 1) Prepare env file
-
-```bash
-cp .env.prod.example .env
-```
-
-Set these values at minimum:
-
-- `DOMAIN` (example: `itpt.example.com`)
-- `FRONTEND_URL` (example: `https://itpt.example.com`)
-- `CORS_ORIGINS` (example: `https://itpt.example.com`)
-- DB/JWT/OAuth/OpenAI/CLOVA related secrets
-
-### 2) DNS
-
-Point `DOMAIN` A record to your server public IP.
-Open inbound ports `80` and `443` in your cloud security group / firewall.
-
-### 3) Run production compose
-
-```bash
-docker compose --env-file .env -f docker-compose.prod.yml up -d --build
-```
-
-### 4) Verify
-
-- Open `https://<DOMAIN>`
-- In browser console, check: `window.isSecureContext` should be `true`
-- Start recording in interview page and confirm mic permission prompt appears
-
-### Added production files
-
-- `docker-compose.prod.yml`
-- `infra/Caddyfile` (automatic HTTPS termination + reverse proxy)
-- `client/Dockerfile.prod`
-- `client/nginx.conf` (SPA fallback)
-- `server/Dockerfile.prod`
 
 ---
 

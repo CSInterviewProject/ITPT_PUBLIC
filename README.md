@@ -138,22 +138,6 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
 
 ---
 
-<details open>
-  <summary><b>Project Structure</b></summary>
-
-<pre><code>ITPT/
-  architecture.png  # architecture diagram
-  server/           # Spring Boot API server
-  client/           # React client (TypeScript)
-  docker/           # docker init scripts
-  docker-compose.dev.yml  # local dev compose (mysql/server/client)
-  docs/             # docs (optional)
-</code></pre>
-
-</details>
-
----
-
 ## 심사 제출 자료
 
 아래 항목은 공개 심사 제출 조건에 맞춰 관리합니다.

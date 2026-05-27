@@ -138,9 +138,7 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
 
 ---
 
-## 심사 제출 자료
-
-아래 항목은 공개 심사 제출 조건에 맞춰 관리합니다.
+## 자료
 
 - 프로젝트 결과물(소스 코드/개발 문서): `client/`, `server/`, `README.md`
 - 발표자료 또는 포스터 PDF: [ITPT Poster PDF](submission/ITPT_poster.pdf)

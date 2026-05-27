@@ -1,5 +1,4 @@
-# ITPT (CS Interview Practice Tool)
-
+# ITPT
 CS 면접 대비를 위한 웹 서비스.  
 질문 제공 → 답변(STT) 기록 → AI 피드백/점수화 → 기록/분석  
 흐름으로 연습할 수 있도록 지원합니다.

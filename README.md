@@ -200,3 +200,14 @@ docker compose --env-file .env -f docker-compose.prod.yml up -d --build
 - `client/Dockerfile.prod`
 - `client/nginx.conf` (SPA fallback)
 - `server/Dockerfile.prod`
+
+---
+
+## 심사 제출 자료
+
+아래 항목은 공개 심사 제출 조건에 맞춰 관리합니다.
+
+- 프로젝트 결과물(소스 코드/개발 문서): `client/`, `server/`, `README.md`
+- 발표자료 또는 포스터 PDF: [ITPT Poster PDF](submission/ITPT_poster.pdf)
+- 프로젝트 결과 보고서 PDF: `submission/ITPT_project_report.pdf` (업로드 예정)
+- 시연 영상 링크(YouTube 등): `https://youtu.be/` 형식 링크 추가 예정

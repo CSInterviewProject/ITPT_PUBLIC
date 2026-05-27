@@ -31,7 +31,7 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
 
 - **Frontend(React + TypeScript)**: 면접 UI/기록/대시보드
 - **Backend(Spring Boot)**: 인증/권한, 도메인 로직, DB 접근, STT/LLM 연동 처리
-- **Database(MariaDB/MySQL 호환)**: 유저/질문/세션/로그 저장
+- **Database(MySQL)**: 유저/질문/세션/로그 저장
 - **OpenAI API**: 피드백/채점/요약 등 LLM 기능 (현재 Spring 서버에서 직접 호출)
 
 </details>

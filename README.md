@@ -1,3 +1,22 @@
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <b>Poster PDF</b><br />
+      <a href="submission/ITPT_poster.pdf">바로 보기</a>
+    </td>
+    <td align="center" width="33%">
+      <b>시연 영상</b><br />
+      <a href="https://youtu.be/">바로 보기</a>
+    </td>
+    <td align="center" width="33%">
+      <b>ITPT 링크</b><br />
+      <a href="https://github.com/CSInterviewProject/ITPT_PUBLIC">바로 가기</a>
+    </td>
+  </tr>
+</table>
+
+---
+
 # ITPT
 CS 면접 대비를 위한 웹 서비스.  
 질문 제공 → 답변(STT) 기록 → AI 피드백/점수화 → 기록/분석  

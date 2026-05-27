@@ -42,10 +42,10 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
   <summary><b>Badges</b></summary>
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=springboot&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.2-6DB33F?logo=springboot&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Spring%20Security-auth-6DB33F?logo=springsecurity&logoColor=white)
 ![JPA](https://img.shields.io/badge/Spring%20Data%20JPA-ORM-6DB33F?logo=spring&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1?logo=mysql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-build-02303A?logo=gradle&logoColor=white)
 
 ![React](https://img.shields.io/badge/React-UI-61DAFB?logo=react&logoColor=black)

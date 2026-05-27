@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.itpt'
+version = '0.0.1-SNAPSHOT'
+description = 'ITPT API Server'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // ✅ Spring Boot 기본 설정
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // ✅ Jackson & 날짜 변환 (에러 해결의 핵심!)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // ✅ DB Driver: MySQL
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // ✅ 개발 편의 도구 (Lombok, Devtools)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // ✅ JWT (JJWT)
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+    //Oauth 인증
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    //구글 인증메시지
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    // ✅ 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,847 @@
+[
+  {
+    "id": "db-001",
+    "topic": "DB",
+    "subtopic": "Basics",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "SQL이란 무엇일까요?",
+    "answer": {
+      "text": "SQL(Structured Query Language)은 관계형 데이터베이스 관리 시스템(RDBMS)의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍 언어입니다.",
+      "bullets": [
+        "자료의 검색, 관리, 데이터베이스 스키마 생성 및 수정, 객체 접근 조정 관리를 위해 고안되었습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "SQL",
+        "RDBMS",
+        "데이터 관리"
+      ],
+      "optional": [
+        "스키마",
+        "쿼리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 1,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-002",
+    "topic": "DB",
+    "subtopic": "Transaction",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "트랜잭션이란?",
+    "answer": {
+      "text": "데이터베이스의 상태를 변화시키기 위해 수행하는 작업의 단위 또는 일련의 연산들을 의미합니다.",
+      "bullets": [
+        "데이터의 정합성을 보장하기 위해 고안되었습니다.",
+        "병행 제어 및 회복 작업을 수행할 때 처리되는 논리적인 작업 단위가 됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "트랜잭션",
+        "작업 단위",
+        "정합성"
+      ],
+      "optional": [
+        "병행 제어",
+        "회복"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 2,
+    "followUps": {
+      "default": [
+        "db-003",
+        "db-004"
+      ],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-003",
+    "topic": "DB",
+    "subtopic": "Transaction",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "트랜잭션의 특징인 ACID에 대해 설명해주세요",
+    "answer": {
+      "text": "트랜잭션이 안전하게 수행됨을 보장하는 네 가지 핵심 특징인 원자성, 일관성, 독립성, 지속성을 의미합니다.",
+      "bullets": [
+        "Atomicity(원자성): 연산은 모두 반영되거나 아예 반영되지 않아야 합니다.",
+        "Consistency(일관성): 성공 후에도 데이터베이스는 일관성 있는 상태를 유지해야 합니다 (예: 송금 전후 총합 유지).",
+        "Isolation(독립성): 실행 중인 트랜잭션의 연산에 다른 트랜잭션이 끼어들 수 없습니다.",
+        "Durability(지속성): 성공한 결과는 시스템 고장 시에도 영구적으로 반영되어야 합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "ACID",
+        "원자성",
+        "일관성",
+        "독립성",
+        "지속성"
+      ],
+      "optional": [
+        "정합성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 3,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-004",
+    "topic": "DB",
+    "subtopic": "Transaction",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "다수의 트랜잭션이 하나의 자원을 접근할 때 발생할 수 있는 문제들은 무엇이 있을까요?",
+    "answer": {
+      "text": "동시성 제어가 되지 않을 때 Dirty Read, Non-Repeatable Read, Phantom Read 현상이 발생할 수 있습니다.",
+      "bullets": [
+        "Dirty Read: 아직 커밋되지 않은 결과를 다른 트랜잭션에서 확인하는 현상입니다.",
+        "Non-Repeatable Read: 한 트랜잭션 내에서 같은 조회 결과가 달라지는 문제입니다.",
+        "Phantom Read: 같은 범위 조회 시 첫 번째 쿼리에 없던 데이터가 두 번째 쿼리에서 나타나는 현상입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Dirty Read",
+        "Non-Repeatable Read",
+        "Phantom Read"
+      ],
+      "optional": [
+        "데이터 부정합"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 4,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-005",
+    "topic": "DB",
+    "subtopic": "Transaction",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "트랜잭션의 격리 레벨에 대해 설명해주세요",
+    "answer": {
+      "text": "동시에 여러 트랜잭션이 처리될 때 특정 트랜잭션이 다른 트랜잭션의 데이터를 볼 수 있는 허용 수준을 결정하는 설정입니다.",
+      "bullets": [
+        "READ UNCOMMITTED(Level 0): 커밋 여부와 상관없이 조회 가능하며 Dirty Read가 발생합니다.",
+        "READ COMMITTED(Level 1): 커밋된 데이터만 조회하며 언두(Undo) 로그를 활용해 Dirty Read를 해결합니다.",
+        "REPEATABLE READ(Level 2): 동일 트랜잭션 내 일관된 읽기를 보장합니다 (MySQL은 MVCC 활용).",
+        "SERIALIZABLE(Level 3): 모든 동작을 직렬화하여 완벽한 일관성을 제공하지만 성능이 떨어집니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "격리 수준",
+        "READ COMMITTED",
+        "REPEATABLE READ",
+        "SERIALIZABLE"
+      ],
+      "optional": [
+        "Undo 로그",
+        "MVCC"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 5,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-006",
+    "topic": "DB",
+    "subtopic": "SQL Language",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "DDL, DML, DCL 은 무엇일까요?",
+    "answer": {
+      "text": "SQL 명령은 역할에 따라 DDL(정의어), DML(조작어), DCL(제어어)로 구분합니다. (트랜잭션 제어는 보통 TCL로 별도 분류하기도 합니다.)",
+      "bullets": [
+        "DDL(정의어): 스키마/테이블/인덱스 같은 DB 객체를 정의·변경합니다. 예) CREATE, ALTER, DROP",
+        "DML(조작어): 데이터를 조회/삽입/수정/삭제합니다. 예) SELECT, INSERT, UPDATE, DELETE",
+        "DCL(제어어): 권한/접근 제어를 담당합니다. 예) GRANT, REVOKE",
+        "TCL(트랜잭션 제어, 분류하는 경우): 트랜잭션 확정/취소 등을 담당합니다. 예) COMMIT, ROLLBACK, SAVEPOINT"
+      ]
+    },
+    "keywords": {
+      "required": [
+        "DDL",
+        "DML",
+        "DCL"
+      ],
+      "optional": [
+        "Auto Commit",
+        "Rollback",
+        "TCL",
+        "COMMIT",
+        "ROLLBACK"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 6,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-007",
+    "topic": "DB",
+    "subtopic": "Keys",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Key에 대해 설명해주세요",
+    "answer": {
+      "text": "데이터베이스 릴레이션에서 튜플을 식별하거나 관계를 표현하기 위해 사용하는 속성들의 집합입니다.",
+      "bullets": [
+        "후보키: 유일성과 최소성을 만족하며 튜플을 식별할 수 있는 속성 집합입니다.",
+        "기본키(PK): 후보키 중 선택된 메인 키로, NULL과 중복을 허용하지 않습니다.",
+        "슈퍼키: 유일성은 만족하지만 최소성은 만족하지 못하는 키입니다.",
+        "외래키(FK): 다른 릴레이션의 기본키를 참조하여 관계를 표현하는 도구입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "후보키",
+        "기본키",
+        "외래키",
+        "슈퍼키"
+      ],
+      "optional": [
+        "유일성",
+        "최소성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 7,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-008",
+    "topic": "DB",
+    "subtopic": "Keys",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "외래키 값은 NULL이 들어올 수 있나요?",
+    "answer": {
+      "text": "네, 외래키는 NULL 값을 가질 수 있습니다.",
+      "bullets": [
+        "하지만 참조 무결성을 유지하기 위해서는 가급적 NULL을 허용하지 않는 것이 권장됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "외래키",
+        "NULL 허용"
+      ],
+      "optional": [
+        "참조 무결성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 8,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-009",
+    "topic": "DB",
+    "subtopic": "View",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "View란 무엇일까요?",
+    "answer": {
+      "text": "뷰(View)는 하나 이상의 테이블(또는 다른 뷰)을 기반으로 정의된 ‘가상 테이블’입니다. 저장된 쿼리처럼 동작하며, 실제 데이터는 기본 테이블에 존재합니다.",
+      "bullets": [
+        "장점: 복잡한 쿼리를 단순화하고, 특정 컬럼/행만 노출하여 보안을 강화할 수 있습니다.",
+        "일반 뷰는 자체적으로 데이터를 저장하지 않으므로 성능은 기본 테이블의 인덱스와 실행 계획에 의존합니다. (일부 DB는 materialized/indexed view를 별도로 제공합니다.)",
+        "업데이트 가능 뷰(Updatable View)는 조건이 맞을 때 INSERT/UPDATE/DELETE가 가능하며, 변경은 기본 테이블에 반영됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "뷰",
+        "가상 테이블",
+        "기본 테이블"
+      ],
+      "optional": [
+        "CUD 제약",
+        "Updatable View",
+        "Materialized View"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 9,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-010",
+    "topic": "DB",
+    "subtopic": "Join",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "조인(Join)은 무엇이며 어떤 종류들이 있을까요?",
+    "answer": {
+      "text": "두 개 이상의 테이블을 연결하여 데이터를 검색하는 방법으로, 공통 속성을 기반으로 연결합니다.",
+      "bullets": [
+        "INNER JOIN: 두 테이블의 교집합을 추출합니다.",
+        "LEFT/RIGHT OUTER JOIN: 기준 테이블의 전체와 상대 테이블의 교집합을 합칩니다.",
+        "FULL OUTER JOIN: 두 테이블의 합집합을 조회합니다.",
+        "CROSS JOIN: 발생 가능한 모든 조합(카테시안 곱)을 표현합니다.",
+        "SELF JOIN: 테이블 자기 자신과 조인합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "INNER JOIN",
+        "OUTER JOIN",
+        "SELF JOIN"
+      ],
+      "optional": [
+        "교집합",
+        "합집합"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 10,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-011",
+    "topic": "DB",
+    "subtopic": "Anomaly & Normalization",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "데이터베이스 이상(Anomaly)현상이란?",
+    "answer": {
+      "text": "잘못된 테이블 설계로 인해 삽입, 삭제, 수정 시 발생하는 논리적 오류를 의미합니다.",
+      "bullets": [
+        "삽입 이상: 원치 않는 데이터까지 삽입해야만 테이블 추가가 가능한 현상입니다.",
+        "갱신 이상: 데이터 중복으로 인해 일부만 수정되어 모순이 생기는 현상입니다.",
+        "삭제 이상: 특정 정보 삭제 시 의도치 않은 다른 정보까지 함께 사라지는 현상입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "삽입 이상",
+        "갱신 이상",
+        "삭제 이상"
+      ],
+      "optional": [
+        "중복 데이터"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 11,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-012",
+    "topic": "DB",
+    "subtopic": "Anomaly & Normalization",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "정규화란 무엇일까요?",
+    "answer": {
+      "text": "이상 현상을 제거하기 위해 데이터 중복을 최소화하고 릴레이션을 분해하는 과정입니다.",
+      "bullets": [
+        "1NF: 모든 속성 값이 원자 값(Atomic Value)으로만 구성되어야 합니다.",
+        "2NF: 부분 함수적 종속을 제거하여 완전 함수적 종속을 만족해야 합니다.",
+        "3NF: 이행적 함수 종속을 만족하지 않도록 분해합니다.",
+        "BCNF: 모든 결정자가 후보키가 되도록 설계합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "optional": [
+        "부분 함수 종속",
+        "이행적 종속"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 12,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-013",
+    "topic": "DB",
+    "subtopic": "RDBMS & NoSQL",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "RDBMS와 NoSQL의 차이점은 무엇일까요?",
+    "answer": {
+      "text": "RDBMS와 NoSQL은 데이터 모델/스키마 강제 여부, 트랜잭션/일관성 요구, 확장 방식에서 차이가 큽니다.",
+      "bullets": [
+        "RDBMS: 고정/명시적 스키마와 관계(조인)를 기반으로 하며, 강한 트랜잭션/무결성 요구에 적합합니다.",
+        "NoSQL: 문서/키-값/컬럼/그래프 등 다양한 모델을 사용하며 스키마가 유연한 편이고, 대규모 수평 확장(Scale-out)에 유리한 설계가 많습니다.",
+        "참고: RDBMS도 리플리카/샤딩 등으로 scale-out이 가능하지만 보통 설계·운영 복잡도가 증가합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "RDBMS",
+        "NoSQL",
+        "스키마",
+        "확장"
+      ],
+      "optional": [
+        "정합성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 13,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-014",
+    "topic": "DB",
+    "subtopic": "Performance & Index",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "Full table scan이란?",
+    "answer": {
+      "text": "데이터 탐색을 위해 테이블의 모든 데이터를 순차적으로 확인하는 방식입니다.",
+      "bullets": [
+        "인덱스가 없거나 처리 범위가 너무 넓을 때 발생하며, 데이터가 많을수록 큰 비용이 듭니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Full table scan",
+        "순차 탐색"
+      ],
+      "optional": [
+        "인덱스 부재"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 14,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-015",
+    "topic": "DB",
+    "subtopic": "Performance & Index",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "카디널리티(Cardinality)란?",
+    "answer": {
+      "text": "인덱스 키 값 중 유니크한 값의 수를 의미하며, 선택성(Selectivity)과 밀접한 관련이 있습니다.",
+      "bullets": [
+        "카디널리티가 높을수록 검색 대상이 줄어들어 인덱스 처리 속도가 빨라집니다.",
+        "검색뿐만 아니라 정렬, 그룹핑 등의 성능을 위해서도 중요하게 고려됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "카디널리티",
+        "선택성",
+        "유니크"
+      ],
+      "optional": [
+        "기수성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 15,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-016",
+    "topic": "DB",
+    "subtopic": "Performance & Index",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "인덱스란 무엇일까요?",
+    "answer": {
+      "text": "추가 저장 공간을 활용해 테이블의 검색 속도를 향상시키기 위한 자료구조입니다.",
+      "bullets": [
+        "조회 성능은 향상되지만, INSERT/UPDATE/DELETE 작업 시 정렬을 다시 수행하므로 오버헤드가 발생합니다.",
+        "PK(클러스터링 인덱스)와 보조 키(논 클러스터링 인덱스)로 구분됩니다.",
+        "데이터의 중복도가 낮은(카디널리티가 높은) 컬럼에 설정하는 것이 유리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "인덱스",
+        "검색 성능",
+        "오버헤드"
+      ],
+      "optional": [
+        "카디널리티",
+        "PK"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 16,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-017",
+    "topic": "DB",
+    "subtopic": "Performance & Index",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "B-Tree란?",
+    "answer": {
+      "text": "Balanced Tree의 약자로, 루트/브랜치/리프 노드로 구성되어 정렬 상태를 유지하는 인덱스 알고리즘입니다.",
+      "bullets": [
+        "대부분의 범용적인 검색 요건에 적합하며 클러스터링 여부에 따라 리프 노드에 실제 데이터나 주소를 저장합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "B-Tree",
+        "Balanced",
+        "리프 노드"
+      ],
+      "optional": [
+        "정렬"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 17,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-018",
+    "topic": "DB",
+    "subtopic": "Performance & Index",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "클러스터링 인덱스와 논-클러스터링 인덱스란 무엇일까요?",
+    "answer": {
+      "text": "리프 노드에 실제 데이터가 물리적으로 저장되는지, 데이터 주소가 저장되는지에 따른 구분입니다.",
+      "bullets": [
+        "클러스터링: 리프 페이지가 곧 데이터 페이지이며 테이블당 1개만 생성 가능합니다 (PK 지정 시 자동 생성).",
+        "논-클러스터링: 별도의 인덱스 페이지를 생성하며, 리프 페이지에는 실제 데이터의 PK 값을 담고 있습니다.",
+        "InnoDB 기준, 논-클러스터링 인덱스 탐색 후 다시 클러스터링 인덱스를 탐색하는 과정을 거칩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "클러스터링",
+        "논-클러스터링",
+        "리프 페이지"
+      ],
+      "optional": [
+        "InnoDB",
+        "PK"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 18,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-019",
+    "topic": "DB",
+    "subtopic": "MySQL Architecture",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "MySQL InnoDB의 Undo 영역과 Redo 영역에 대해 설명해 주세요.",
+    "answer": {
+      "text": "장애 복구와 트랜잭션의 롤백/격리를 위해 사용하는 중요한 로그 영역입니다.",
+      "bullets": [
+        "UNDO LOG: 변경 전 데이터를 기록하여 롤백 시 복구하거나 격리 수준 유지를 위해 사용됩니다.",
+        "REDO LOG: 장애 시 메모리(Buffer Pool)의 데이터 유실을 방지하고 커밋된 내용을 복구하는 데 사용됩니다.",
+        "성능 향상을 위해 디스크 직결 대신 버퍼를 거쳐 주기적으로 기록됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Undo",
+        "Redo",
+        "장애 복구",
+        "롤백"
+      ],
+      "optional": [
+        "Buffer Pool"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 19,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-020",
+    "topic": "DB",
+    "subtopic": "MySQL Architecture",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "MySQL InnoDB의 Change Buffer(구 Insert Buffer)란?",
+    "answer": {
+      "text": "Change Buffer는 보조 인덱스(secondary index) 변경을 즉시 디스크 페이지에 반영하지 않고 버퍼링했다가 나중에 병합(merge)하여 I/O를 줄이는 최적화 기능입니다.",
+      "bullets": [
+        "대상: 주로 보조 인덱스 변경(INSERT/UPDATE/DELETE)에서, 해당 인덱스 페이지가 버퍼 풀에 없을 때 효과가 큽니다.",
+        "장점: 랜덤 I/O를 줄여 쓰기 성능을 개선할 수 있습니다.",
+        "주의: 읽기 위주의 워크로드에서는 효과가 제한적일 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Change Buffer",
+        "보조 인덱스",
+        "I/O"
+      ],
+      "optional": [
+        "인덱스 성능",
+        "merge"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 20,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-021",
+    "topic": "DB",
+    "subtopic": "MySQL Architecture",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "MySQL InnoDB의 MVCC에 대해 설명해주세요",
+    "answer": {
+      "text": "다중 버전 동시성 제어(Multi Version Concurrency Control)를 통해 락 없이 일관된 조회를 제공합니다.",
+      "bullets": [
+        "커밋되지 않은 데이터 요청 시 Buffer Pool 대신 Undo Log에 기록된 이전 버전을 반환합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "MVCC",
+        "다중 버전",
+        "Undo 로그"
+      ],
+      "optional": [
+        "동시성 제어"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 21,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-022",
+    "topic": "DB",
+    "subtopic": "MySQL Architecture",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "MySQL 락에 대해 설명해주세요",
+    "answer": {
+      "text": "데이터의 무결성을 위해 자원 접근을 제한하는 메커니즘으로 행 단위와 인덱스 범위를 잠글 수 있습니다.",
+      "bullets": [
+        "Shared Lock(S): 읽기 잠금으로 여러 트랜잭션이 동시 획득 가능합니다.",
+        "Exclusive Lock(X): 쓰기 잠금으로 다른 모든 락의 접근을 차단합니다.",
+        "Record Lock: 인덱스 레코드 자체를 잠급니다.",
+        "Gap Lock: 레코드 사이의 간격을 잠가 데이터 삽입을 막습니다.",
+        "Next Key Lock: 레코드 락과 갭 락을 결합하여 팬텀 리드를 방지합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Shared Lock",
+        "Exclusive Lock",
+        "Gap Lock"
+      ],
+      "optional": [
+        "Next Key Lock"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 22,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-023",
+    "topic": "DB",
+    "subtopic": "Keys",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "MySQL에서 기본키를 설정하지 않고 테이블을 만들면 어떻게 될까요?",
+    "answer": {
+      "text": "InnoDB 엔진은 내부적으로 PK를 요구하므로 명시하지 않을 경우 Hidden PK를 자동으로 생성합니다.",
+      "bullets": [
+        "사용자가 관리하기 어렵고 세컨더리 인덱스가 없어 성능 저하가 발생할 수 있습니다.",
+        "관계 모델링이 불가능하므로 가급적 명시적으로 PK를 설정해야 합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Hidden PK",
+        "성능 저하"
+      ],
+      "optional": [
+        "InnoDB"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 23,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-024",
+    "topic": "DB",
+    "subtopic": "DBCP & HikariCP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "DB Connection Pool은 무엇이며 왜 필요할까요?",
+    "answer": {
+      "text": "미리 생성된 커넥션들을 풀(Pool)에 저장해두고 필요할 때 빌려 쓰는 관리 기법입니다.",
+      "bullets": [
+        "매번 새로운 연결을 맺는 비용을 줄여 데이터베이스 접속 속도를 향상시킵니다.",
+        "동시 접속 수를 제한하여 서버 자원 고갈을 방지합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "DBCP",
+        "연결 비용",
+        "자원 관리"
+      ],
+      "optional": [
+        "Pool"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 24,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-025",
+    "topic": "DB",
+    "subtopic": "DBCP & HikariCP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "HikariCP란 무엇일까요?",
+    "answer": {
+      "text": "스프링 프레임워크에서 기본으로 채택하고 있는 매우 빠르고 가벼운 JDBC 커넥션 풀 라이브러리입니다.",
+      "bullets": [
+        "Zero-overhead를 목표로 설계되어 안정성과 성능이 뛰어납니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "HikariCP",
+        "JDBC",
+        "Spring Default"
+      ],
+      "optional": [
+        "성능"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 25,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "db-026",
+    "topic": "DB",
+    "subtopic": "DBCP & HikariCP",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "HikariCP의 동작 원리에 대해 설명해주세요",
+    "answer": {
+      "text": "스레드가 요청할 때 이전에 사용했던 커넥션을 우선 반환하며, 효율적인 대기 큐를 활용합니다.",
+      "bullets": [
+        "사용 가능한 커넥션이 없으면 HandOffQueue에서 다른 스레드가 반납하기를 대기합니다.",
+        "타임아웃 시간 내에 커넥션을 획득하지 못하면 예외를 던집니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "HandOffQueue",
+        "타임아웃"
+      ],
+      "optional": [
+        "커넥션 획득"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 26,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  }
+]

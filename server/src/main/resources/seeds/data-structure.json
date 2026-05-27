@@ -1,0 +1,1909 @@
+[
+  {
+    "id": "ds-001",
+    "topic": "Data Structure",
+    "subtopic": "Basics",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "자료구조란 무엇인가요?",
+    "answer": {
+      "text": "자료구조는 데이터를 효율적으로 저장하고 탐색하고 수정하기 위한 조직화 방식입니다.",
+      "bullets": [
+        "같은 데이터라도 어떤 구조를 선택하느냐에 따라 시간 복잡도와 메모리 사용량이 달라집니다.",
+        "문제의 특성에 맞는 자료구조를 고르는 것이 알고리즘 성능에 큰 영향을 줍니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "자료구조",
+        "데이터 저장",
+        "효율성"
+      ],
+      "optional": [
+        "시간 복잡도",
+        "메모리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 1,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-002",
+    "topic": "Data Structure",
+    "subtopic": "Basics",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "추상 자료형(ADT)이란 무엇인가요?",
+    "answer": {
+      "text": "추상 자료형은 데이터와 그 데이터에 대해 허용되는 연산만을 정의한 논리적 모델입니다.",
+      "bullets": [
+        "구현 방식은 숨기고 무엇을 할 수 있는지만 정의합니다.",
+        "스택, 큐, 리스트는 대표적인 ADT입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "ADT",
+        "연산 정의",
+        "구현 은닉"
+      ],
+      "optional": [
+        "인터페이스",
+        "추상화"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 2,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-003",
+    "topic": "Data Structure",
+    "subtopic": "Complexity",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "시간 복잡도와 공간 복잡도는 무엇인가요?",
+    "answer": {
+      "text": "시간 복잡도는 입력 크기에 따른 실행 시간의 증가 정도이고, 공간 복잡도는 필요한 메모리의 증가 정도입니다.",
+      "bullets": [
+        "보통 Big-O 표기법으로 상한을 표현합니다.",
+        "실무에서는 최악 시간뿐 아니라 평균 성능과 메모리 사용도 함께 고려합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "시간 복잡도",
+        "공간 복잡도",
+        "Big-O"
+      ],
+      "optional": [
+        "최악의 경우",
+        "평균"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 3,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-004",
+    "topic": "Data Structure",
+    "subtopic": "Complexity",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Big-O, Big-Theta, Big-Omega의 차이는 무엇인가요?",
+    "answer": {
+      "text": "Big-O는 상한, Big-Omega는 하한, Big-Theta는 상한과 하한이 일치하는 점근적 경계를 의미합니다.",
+      "bullets": [
+        "Big-O는 최악의 경우를 설명할 때 자주 사용됩니다.",
+        "Big-Theta는 정확한 성장률을 표현할 때 유용합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Big-O",
+        "Big-Theta",
+        "Big-Omega"
+      ],
+      "optional": [
+        "상한",
+        "하한"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 4,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-005",
+    "topic": "Data Structure",
+    "subtopic": "Array",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "배열(Array)의 특징은 무엇인가요?",
+    "answer": {
+      "text": "배열은 같은 타입의 데이터를 연속된 메모리 공간에 저장하는 선형 자료구조입니다.",
+      "bullets": [
+        "인덱스를 이용한 접근이 빨라 O(1) 접근이 가능합니다.",
+        "중간 삽입과 삭제는 요소 이동이 필요해 비효율적일 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "배열",
+        "연속 메모리",
+        "인덱스"
+      ],
+      "optional": [
+        "O(1) 접근",
+        "삽입 삭제"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 5,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-006",
+    "topic": "Data Structure",
+    "subtopic": "Array",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "배열과 연결 리스트의 차이는 무엇인가요?",
+    "answer": {
+      "text": "배열은 연속 메모리를 사용해 접근이 빠르고, 연결 리스트는 노드 연결로 이루어져 삽입과 삭제에 유리합니다.",
+      "bullets": [
+        "배열은 크기 변경이 어렵고 중간 삽입 비용이 큽니다.",
+        "연결 리스트는 순차 접근만 가능해 탐색 비용이 큽니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "배열",
+        "연결 리스트",
+        "접근 방식"
+      ],
+      "optional": [
+        "연속 메모리",
+        "노드"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 6,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-007",
+    "topic": "Data Structure",
+    "subtopic": "LinkedList",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "단일 연결 리스트(Singly Linked List)란 무엇인가요?",
+    "answer": {
+      "text": "각 노드가 데이터와 다음 노드를 가리키는 포인터를 가지는 선형 자료구조입니다.",
+      "bullets": [
+        "삽입과 삭제가 포인터 변경만으로 가능할 수 있습니다.",
+        "이전 노드로 직접 이동할 수 없어서 역방향 탐색은 어렵습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "단일 연결 리스트",
+        "노드",
+        "포인터"
+      ],
+      "optional": [
+        "next",
+        "선형 구조"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 7,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-008",
+    "topic": "Data Structure",
+    "subtopic": "LinkedList",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "이중 연결 리스트(Doubly Linked List)의 장단점은 무엇인가요?",
+    "answer": {
+      "text": "이중 연결 리스트는 각 노드가 이전 노드와 다음 노드를 모두 가리켜 양방향 탐색이 가능합니다.",
+      "bullets": [
+        "삭제 시 이전 노드를 쉽게 찾을 수 있어 편리합니다.",
+        "포인터를 하나 더 저장해야 하므로 메모리 사용량이 증가합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "이중 연결 리스트",
+        "양방향",
+        "prev"
+      ],
+      "optional": [
+        "메모리 오버헤드"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 8,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-009",
+    "topic": "Data Structure",
+    "subtopic": "LinkedList",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "원형 연결 리스트(Circular Linked List)는 언제 유용한가요?",
+    "answer": {
+      "text": "마지막 노드가 다시 첫 노드를 가리키는 구조로, 순환 처리가 필요한 상황에서 유용합니다.",
+      "bullets": [
+        "라운드 로빈 스케줄링 같은 반복 순회 구조에 적합합니다.",
+        "끝과 처음이 자연스럽게 연결되어 한 바퀴 순회 구현이 쉽습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "원형 연결 리스트",
+        "순환",
+        "라운드 로빈"
+      ],
+      "optional": [
+        "tail",
+        "반복 처리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 9,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-010",
+    "topic": "Data Structure",
+    "subtopic": "Stack",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "스택(Stack)이란 무엇인가요?",
+    "answer": {
+      "text": "스택은 가장 나중에 들어온 데이터가 가장 먼저 나가는 LIFO 구조의 선형 자료구조입니다.",
+      "bullets": [
+        "대표 연산은 push, pop, peek입니다.",
+        "함수 호출 스택, 괄호 검사, 되돌리기 기능에 자주 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "스택",
+        "LIFO",
+        "push pop"
+      ],
+      "optional": [
+        "peek",
+        "호출 스택"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 10,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-011",
+    "topic": "Data Structure",
+    "subtopic": "Stack",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "스택의 활용 예를 설명해주세요.",
+    "answer": {
+      "text": "스택은 최근 작업을 먼저 처리해야 하는 문제에 적합합니다.",
+      "bullets": [
+        "함수 호출 시 반환 주소와 지역 변수를 저장합니다.",
+        "괄호 매칭, 수식 계산, 브라우저 뒤로 가기 기능 구현에 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "스택 활용",
+        "괄호 검사",
+        "함수 호출"
+      ],
+      "optional": [
+        "undo",
+        "수식 계산"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 11,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-012",
+    "topic": "Data Structure",
+    "subtopic": "Queue",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "큐(Queue)란 무엇인가요?",
+    "answer": {
+      "text": "큐는 먼저 들어온 데이터가 먼저 나가는 FIFO 구조의 선형 자료구조입니다.",
+      "bullets": [
+        "대표 연산은 enqueue와 dequeue입니다.",
+        "프린터 작업, 운영체제 스케줄링, BFS에 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "큐",
+        "FIFO",
+        "enqueue dequeue"
+      ],
+      "optional": [
+        "대기열",
+        "BFS"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 12,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-013",
+    "topic": "Data Structure",
+    "subtopic": "Queue",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "선형 큐와 원형 큐의 차이는 무엇인가요?",
+    "answer": {
+      "text": "선형 큐는 앞쪽 빈 공간을 재사용하지 못할 수 있고, 원형 큐는 배열을 원형처럼 사용해 공간을 효율적으로 재사용합니다.",
+      "bullets": [
+        "선형 큐는 rear가 끝에 도달하면 공간 낭비가 생길 수 있습니다.",
+        "원형 큐는 front와 rear를 모듈러 연산으로 관리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "선형 큐",
+        "원형 큐",
+        "공간 재사용"
+      ],
+      "optional": [
+        "front",
+        "rear"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 13,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-014",
+    "topic": "Data Structure",
+    "subtopic": "Deque",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "덱(Deque)이란 무엇인가요?",
+    "answer": {
+      "text": "덱은 양쪽 끝에서 모두 삽입과 삭제가 가능한 자료구조입니다.",
+      "bullets": [
+        "스택과 큐의 성질을 모두 활용할 수 있습니다.",
+        "슬라이딩 윈도우 최적화 문제에 자주 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "덱",
+        "양쪽 삽입 삭제",
+        "Deque"
+      ],
+      "optional": [
+        "슬라이딩 윈도우"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 14,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-015",
+    "topic": "Data Structure",
+    "subtopic": "PriorityQueue",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "우선순위 큐(Priority Queue)란 무엇인가요?",
+    "answer": {
+      "text": "우선순위 큐는 들어온 순서가 아니라 우선순위가 높은 데이터가 먼저 나오는 자료구조입니다.",
+      "bullets": [
+        "보통 힙으로 구현합니다.",
+        "운영체제 스케줄링, 다익스트라 알고리즘 등에 활용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "우선순위 큐",
+        "우선순위",
+        "힙"
+      ],
+      "optional": [
+        "다익스트라",
+        "스케줄링"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 15,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-016",
+    "topic": "Data Structure",
+    "subtopic": "Hash",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "해시 테이블(Hash Table)이란 무엇인가요?",
+    "answer": {
+      "text": "키를 해시 함수로 변환해 배열 인덱스에 저장하는 자료구조로 평균적으로 매우 빠른 탐색이 가능합니다.",
+      "bullets": [
+        "평균적으로 삽입, 삭제, 탐색이 O(1)에 가깝습니다.",
+        "충돌 처리 방법이 성능에 큰 영향을 줍니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "해시 테이블",
+        "해시 함수",
+        "O(1)"
+      ],
+      "optional": [
+        "충돌",
+        "버킷"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 16,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-017",
+    "topic": "Data Structure",
+    "subtopic": "Hash",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "해시 충돌(Collision)은 무엇이며 어떻게 해결하나요?",
+    "answer": {
+      "text": "서로 다른 키가 같은 해시 값으로 매핑되는 현상입니다.",
+      "bullets": [
+        "대표 해결 방법은 체이닝과 개방 주소법입니다.",
+        "로드 팩터가 높아지면 충돌이 증가하므로 재해싱을 고려합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "해시 충돌",
+        "체이닝",
+        "개방 주소법"
+      ],
+      "optional": [
+        "로드 팩터",
+        "재해싱"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 17,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-018",
+    "topic": "Data Structure",
+    "subtopic": "Hash",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "로드 팩터(Load Factor)란 무엇인가요?",
+    "answer": {
+      "text": "해시 테이블에 저장된 원소 수를 버킷 수로 나눈 값으로, 충돌 가능성과 성능에 영향을 주는 지표입니다.",
+      "bullets": [
+        "로드 팩터가 높을수록 충돌이 늘어날 가능성이 큽니다.",
+        "일정 임계치를 넘으면 테이블 크기를 늘려 재해싱합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "로드 팩터",
+        "충돌",
+        "재해싱"
+      ],
+      "optional": [
+        "버킷 수"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 18,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-019",
+    "topic": "Data Structure",
+    "subtopic": "Tree",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "트리(Tree)란 무엇인가요?",
+    "answer": {
+      "text": "트리는 계층적 관계를 표현하는 비선형 자료구조로, 루트와 부모-자식 관계를 가집니다.",
+      "bullets": [
+        "사이클이 없고 하나의 루트에서 시작합니다.",
+        "파일 시스템, 조직도, DOM 구조 등에 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "트리",
+        "루트",
+        "계층 구조"
+      ],
+      "optional": [
+        "부모 자식",
+        "비선형"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 19,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-020",
+    "topic": "Data Structure",
+    "subtopic": "Tree",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "트리의 주요 용어를 설명해주세요.",
+    "answer": {
+      "text": "트리에서는 루트, 부모, 자식, 형제, 리프, 서브트리, 깊이, 높이 등의 용어를 사용합니다.",
+      "bullets": [
+        "리프 노드는 자식이 없는 노드입니다.",
+        "깊이는 루트에서 특정 노드까지의 간선 수, 높이는 가장 긴 하향 경로 길이입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "루트",
+        "리프",
+        "깊이 높이"
+      ],
+      "optional": [
+        "서브트리",
+        "형제"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 20,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-021",
+    "topic": "Data Structure",
+    "subtopic": "BinaryTree",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "이진 트리(Binary Tree)란 무엇인가요?",
+    "answer": {
+      "text": "각 노드가 최대 두 개의 자식을 가지는 트리입니다.",
+      "bullets": [
+        "왼쪽 자식과 오른쪽 자식으로 구분됩니다.",
+        "표현이 단순하고 다양한 트리 알고리즘의 기반이 됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "이진 트리",
+        "왼쪽 자식",
+        "오른쪽 자식"
+      ],
+      "optional": [
+        "노드"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 21,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-022",
+    "topic": "Data Structure",
+    "subtopic": "BinaryTree",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "포화 이진 트리, 완전 이진 트리, 편향 이진 트리의 차이는 무엇인가요?",
+    "answer": {
+      "text": "노드가 채워진 방식에 따라 구분됩니다.",
+      "bullets": [
+        "포화 이진 트리는 모든 내부 노드가 두 자식을 가집니다.",
+        "완전 이진 트리는 마지막 레벨을 제외하고 모두 채워지고 마지막 레벨은 왼쪽부터 채워집니다.",
+        "편향 이진 트리는 한쪽으로 치우쳐 연결 리스트처럼 변한 형태입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "포화 이진 트리",
+        "완전 이진 트리",
+        "편향 이진 트리"
+      ],
+      "optional": [
+        "마지막 레벨"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 22,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-023",
+    "topic": "Data Structure",
+    "subtopic": "Traversal",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "트리 순회(Tree Traversal) 방식에는 어떤 것이 있나요?",
+    "answer": {
+      "text": "대표적으로 전위 순회, 중위 순회, 후위 순회, 레벨 순회가 있습니다.",
+      "bullets": [
+        "전위는 루트-왼쪽-오른쪽 순서입니다.",
+        "중위는 이진 탐색 트리에서 정렬된 결과를 얻는 데 자주 활용됩니다.",
+        "레벨 순회는 큐를 사용합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "전위",
+        "중위",
+        "후위"
+      ],
+      "optional": [
+        "레벨 순회",
+        "DFS",
+        "BFS"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 23,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-024",
+    "topic": "Data Structure",
+    "subtopic": "BST",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "이진 탐색 트리(BST)의 특징은 무엇인가요?",
+    "answer": {
+      "text": "왼쪽 서브트리의 값은 루트보다 작고, 오른쪽 서브트리의 값은 루트보다 큰 성질을 가진 이진 트리입니다.",
+      "bullets": [
+        "평균적으로 탐색, 삽입, 삭제가 O(log n)입니다.",
+        "트리가 한쪽으로 치우치면 최악의 경우 O(n)이 됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "이진 탐색 트리",
+        "BST",
+        "정렬 성질"
+      ],
+      "optional": [
+        "O(log n)",
+        "편향"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 24,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-025",
+    "topic": "Data Structure",
+    "subtopic": "BST",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "이진 탐색 트리에서 삭제 연산은 어떻게 처리하나요?",
+    "answer": {
+      "text": "삭제할 노드의 자식 수에 따라 처리가 달라집니다.",
+      "bullets": [
+        "자식이 없으면 바로 삭제합니다.",
+        "자식이 하나면 자식을 끌어올립니다.",
+        "자식이 둘이면 중위 후속자 또는 중위 선행자로 대체한 뒤 삭제합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "BST 삭제",
+        "중위 후속자",
+        "자식 수"
+      ],
+      "optional": [
+        "중위 선행자"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 25,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-026",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "힙(Heap)이란 무엇인가요?",
+    "answer": {
+      "text": "힙은 완전 이진 트리 기반의 자료구조로, 부모와 자식 사이에 대소 관계가 유지됩니다.",
+      "bullets": [
+        "최대 힙은 부모가 자식보다 크거나 같습니다.",
+        "최소 힙은 부모가 자식보다 작거나 같습니다.",
+        "우선순위 큐 구현에 적합합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "힙",
+        "완전 이진 트리",
+        "최대 힙 최소 힙"
+      ],
+      "optional": [
+        "우선순위 큐"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 26,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-027",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "힙과 이진 탐색 트리의 차이는 무엇인가요?",
+    "answer": {
+      "text": "힙은 부모-자식 관계만 보장하고, BST는 왼쪽-오른쪽 전체 정렬 관계를 보장합니다.",
+      "bullets": [
+        "힙은 최댓값 또는 최솟값을 빠르게 찾는 데 유리합니다.",
+        "BST는 특정 값 탐색과 정렬된 순회에 유리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "힙",
+        "BST",
+        "정렬 관계"
+      ],
+      "optional": [
+        "최댓값",
+        "탐색"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 27,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-028",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "힙 삽입과 삭제의 시간 복잡도는 왜 O(log n)인가요?",
+    "answer": {
+      "text": "완전 이진 트리의 높이가 log n이기 때문에 위아래로 재정렬하는 과정이 최대 트리 높이만큼 진행됩니다.",
+      "bullets": [
+        "삽입 시에는 마지막 위치에 넣고 상향 조정합니다.",
+        "삭제 시에는 루트를 제거한 뒤 마지막 노드를 올리고 하향 조정합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "힙 삽입 삭제",
+        "O(log n)",
+        "상향 조정"
+      ],
+      "optional": [
+        "하향 조정",
+        "트리 높이"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 28,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-029",
+    "topic": "Data Structure",
+    "subtopic": "BalancedTree",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "균형 이진 탐색 트리가 필요한 이유는 무엇인가요?",
+    "answer": {
+      "text": "일반 BST는 입력 순서에 따라 한쪽으로 치우쳐 성능이 O(n)까지 나빠질 수 있기 때문입니다.",
+      "bullets": [
+        "균형을 유지하면 탐색, 삽입, 삭제를 안정적으로 O(log n)에 가깝게 유지할 수 있습니다.",
+        "AVL 트리, Red-Black 트리가 대표적입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "균형 트리",
+        "O(log n)",
+        "AVL"
+      ],
+      "optional": [
+        "Red-Black Tree",
+        "편향 방지"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 29,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-030",
+    "topic": "Data Structure",
+    "subtopic": "AVL",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "AVL 트리란 무엇인가요?",
+    "answer": {
+      "text": "AVL 트리는 모든 노드에서 왼쪽과 오른쪽 서브트리 높이 차이가 1 이하가 되도록 유지하는 자가 균형 BST입니다.",
+      "bullets": [
+        "삽입과 삭제 후 필요하면 회전을 수행합니다.",
+        "탐색 성능이 매우 안정적입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "AVL 트리",
+        "높이 차이",
+        "회전"
+      ],
+      "optional": [
+        "균형 인수"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 30,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-031",
+    "topic": "Data Structure",
+    "subtopic": "RedBlackTree",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "Red-Black Tree의 특징은 무엇인가요?",
+    "answer": {
+      "text": "노드에 색 정보를 두어 트리 균형을 완화된 규칙으로 유지하는 자가 균형 BST입니다.",
+      "bullets": [
+        "루트는 검은색입니다.",
+        "빨간 노드의 자식은 빨간색이 될 수 없습니다.",
+        "모든 경로의 black height를 비슷하게 유지합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Red-Black Tree",
+        "색",
+        "균형"
+      ],
+      "optional": [
+        "black height",
+        "회전"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 31,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-032",
+    "topic": "Data Structure",
+    "subtopic": "Graph",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "그래프(Graph)란 무엇인가요?",
+    "answer": {
+      "text": "정점(Vertex)과 간선(Edge)으로 이루어진 비선형 자료구조입니다.",
+      "bullets": [
+        "현실 세계의 연결 관계를 표현하는 데 적합합니다.",
+        "SNS, 지도, 네트워크 토폴로지 모델링에 쓰입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "그래프",
+        "정점",
+        "간선"
+      ],
+      "optional": [
+        "네트워크",
+        "연결 관계"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 32,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-033",
+    "topic": "Data Structure",
+    "subtopic": "Graph",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "무방향 그래프와 방향 그래프의 차이는 무엇인가요?",
+    "answer": {
+      "text": "간선에 방향이 있느냐 없느냐의 차이입니다.",
+      "bullets": [
+        "무방향 그래프는 양방향 관계를 표현합니다.",
+        "방향 그래프는 출발 정점과 도착 정점이 구분됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "무방향 그래프",
+        "방향 그래프",
+        "간선 방향"
+      ],
+      "optional": [
+        "양방향",
+        "단방향"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 33,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-034",
+    "topic": "Data Structure",
+    "subtopic": "Graph",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "인접 행렬과 인접 리스트의 차이는 무엇인가요?",
+    "answer": {
+      "text": "그래프를 저장하는 방식의 차이입니다.",
+      "bullets": [
+        "인접 행렬은 구현이 단순하고 간선 존재 확인이 O(1)이지만 메모리를 많이 사용합니다.",
+        "인접 리스트는 희소 그래프에 유리하고 메모리를 절약합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "인접 행렬",
+        "인접 리스트",
+        "그래프 저장"
+      ],
+      "optional": [
+        "희소 그래프",
+        "밀집 그래프"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 34,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-035",
+    "topic": "Data Structure",
+    "subtopic": "GraphTraversal",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "DFS와 BFS의 차이는 무엇인가요?",
+    "answer": {
+      "text": "DFS는 한 경로를 깊게 탐색하고, BFS는 가까운 정점부터 넓게 탐색합니다.",
+      "bullets": [
+        "DFS는 주로 스택 또는 재귀를 사용합니다.",
+        "BFS는 큐를 사용하며 최단 간선 수 경로 탐색에 유리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "DFS",
+        "BFS",
+        "스택 큐"
+      ],
+      "optional": [
+        "재귀",
+        "최단 경로"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 35,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-036",
+    "topic": "Data Structure",
+    "subtopic": "GraphTraversal",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "BFS가 최단 경로를 구할 수 있는 이유는 무엇인가요?",
+    "answer": {
+      "text": "가중치가 없는 그래프에서 시작점으로부터 거리가 1, 2, 3인 정점 순서대로 탐색하기 때문입니다.",
+      "bullets": [
+        "처음 방문한 순간이 최단 간선 수 거리입니다.",
+        "큐를 이용해 레벨 순서대로 확장합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "BFS",
+        "최단 경로",
+        "레벨 탐색"
+      ],
+      "optional": [
+        "가중치 없음"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 36,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-037",
+    "topic": "Data Structure",
+    "subtopic": "GraphTraversal",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "DFS는 언제 유용한가요?",
+    "answer": {
+      "text": "경로 존재 여부, 사이클 검사, 연결 요소 탐색, 위상 정렬 기반 처리 등에 유용합니다.",
+      "bullets": [
+        "백트래킹과 결합하기 좋습니다.",
+        "재귀적으로 구현하면 코드가 간결해질 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "DFS 활용",
+        "사이클 검사",
+        "연결 요소"
+      ],
+      "optional": [
+        "백트래킹",
+        "위상 정렬"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 37,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-038",
+    "topic": "Data Structure",
+    "subtopic": "Graph",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "사이클(Cycle)이란 무엇인가요?",
+    "answer": {
+      "text": "그래프에서 시작한 정점으로 다시 돌아오는 경로가 존재하는 것을 말합니다.",
+      "bullets": [
+        "무방향 그래프와 방향 그래프에서 판별 방법이 조금 다릅니다.",
+        "사이클 여부는 위상 정렬 가능 여부와도 관련됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "사이클",
+        "경로",
+        "그래프"
+      ],
+      "optional": [
+        "위상 정렬"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 38,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-039",
+    "topic": "Data Structure",
+    "subtopic": "Graph",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "위상 정렬(Topological Sort)이란 무엇인가요?",
+    "answer": {
+      "text": "방향 비순환 그래프(DAG)에서 간선 방향을 거스르지 않도록 정점을 나열하는 방법입니다.",
+      "bullets": [
+        "선수 과목 관계나 작업 스케줄링에 활용됩니다.",
+        "사이클이 있으면 위상 정렬이 불가능합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "위상 정렬",
+        "DAG",
+        "스케줄링"
+      ],
+      "optional": [
+        "진입 차수"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 39,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-040",
+    "topic": "Data Structure",
+    "subtopic": "SetMap",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "집합(Set)의 특징은 무엇인가요?",
+    "answer": {
+      "text": "집합은 중복을 허용하지 않고 원소의 순서가 중요하지 않은 자료 구조 또는 추상 자료형입니다.",
+      "bullets": [
+        "원소 존재 여부 확인에 자주 사용됩니다.",
+        "해시 기반이면 평균 O(1) 탐색이 가능합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "집합",
+        "중복 불가",
+        "순서 없음"
+      ],
+      "optional": [
+        "해시 셋"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 40,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-041",
+    "topic": "Data Structure",
+    "subtopic": "SetMap",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "맵(Map) 또는 딕셔너리(Dictionary)란 무엇인가요?",
+    "answer": {
+      "text": "키와 값의 쌍으로 데이터를 저장하는 자료구조입니다.",
+      "bullets": [
+        "키를 통해 값을 빠르게 찾을 수 있습니다.",
+        "보통 해시 테이블이나 트리 기반으로 구현합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "맵",
+        "딕셔너리",
+        "키 값"
+      ],
+      "optional": [
+        "해시맵",
+        "트리맵"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 41,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-042",
+    "topic": "Data Structure",
+    "subtopic": "Trie",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "트라이(Trie)란 무엇인가요?",
+    "answer": {
+      "text": "문자열 집합을 효율적으로 저장하고 탐색하기 위한 트리 형태의 자료구조입니다.",
+      "bullets": [
+        "문자 하나씩 경로를 따라 내려갑니다.",
+        "문자열 검색, 자동완성, 접두사 탐색에 유리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "트라이",
+        "문자열",
+        "접두사"
+      ],
+      "optional": [
+        "자동완성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 42,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-043",
+    "topic": "Data Structure",
+    "subtopic": "Trie",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "트라이가 해시 테이블보다 유리한 경우는 언제인가요?",
+    "answer": {
+      "text": "정확한 문자열 일치뿐 아니라 접두사 검색이나 사전식 탐색이 필요할 때 트라이가 유리합니다.",
+      "bullets": [
+        "해시 테이블은 전체 키 일치 탐색에 강합니다.",
+        "트라이는 prefix 기반 검색을 자연스럽게 처리합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "트라이",
+        "해시 테이블",
+        "접두사 검색"
+      ],
+      "optional": [
+        "사전식 정렬"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 43,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-044",
+    "topic": "Data Structure",
+    "subtopic": "DisjointSet",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "서로소 집합(Disjoint Set, Union-Find)이란 무엇인가요?",
+    "answer": {
+      "text": "원소들이 서로 겹치지 않는 집합으로 나뉘어 있을 때 집합 병합과 대표 원소 찾기를 효율적으로 지원하는 자료구조입니다.",
+      "bullets": [
+        "find와 union 연산을 제공합니다.",
+        "네트워크 연결성, 사이클 판별, 크루스칼 알고리즘에 쓰입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "서로소 집합",
+        "Union-Find",
+        "find union"
+      ],
+      "optional": [
+        "크루스칼",
+        "대표 원소"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 44,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-045",
+    "topic": "Data Structure",
+    "subtopic": "DisjointSet",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "Union-Find의 경로 압축(Path Compression)은 왜 중요한가요?",
+    "answer": {
+      "text": "find 연산 시 부모를 루트로 바로 연결해 이후 탐색 비용을 크게 줄여주기 때문입니다.",
+      "bullets": [
+        "Union by rank 또는 size와 함께 쓰면 거의 상수 시간에 가까운 성능을 얻습니다.",
+        "반복적인 find 호출이 많은 문제에서 매우 효과적입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "경로 압축",
+        "Union-Find",
+        "find 최적화"
+      ],
+      "optional": [
+        "rank",
+        "size"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 45,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-046",
+    "topic": "Data Structure",
+    "subtopic": "SegmentTree",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "세그먼트 트리(Segment Tree)란 무엇인가요?",
+    "answer": {
+      "text": "구간 합, 구간 최솟값 같은 구간 질의를 빠르게 처리하기 위한 트리 기반 자료구조입니다.",
+      "bullets": [
+        "구간 질의와 점 업데이트를 O(log n)에 처리할 수 있습니다.",
+        "배열 기반으로 구현하는 경우가 많습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "세그먼트 트리",
+        "구간 질의",
+        "O(log n)"
+      ],
+      "optional": [
+        "구간 합",
+        "업데이트"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 46,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-047",
+    "topic": "Data Structure",
+    "subtopic": "FenwickTree",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "펜윅 트리(Fenwick Tree, BIT)란 무엇인가요?",
+    "answer": {
+      "text": "누적 합과 점 업데이트를 효율적으로 처리하기 위한 자료구조입니다.",
+      "bullets": [
+        "구현이 세그먼트 트리보다 간단한 편입니다.",
+        "누적 합 질의와 업데이트를 O(log n)에 수행합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "펜윅 트리",
+        "BIT",
+        "누적 합"
+      ],
+      "optional": [
+        "O(log n)",
+        "업데이트"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 47,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-048",
+    "topic": "Data Structure",
+    "subtopic": "SparseTable",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "스파스 테이블(Sparse Table)은 어떤 문제에 적합한가요?",
+    "answer": {
+      "text": "배열이 변하지 않는 상황에서 구간 최소/최대 같은 정적 질의를 빠르게 처리하는 데 적합합니다.",
+      "bullets": [
+        "전처리 이후 질의를 빠르게 처리합니다.",
+        "업데이트가 잦은 상황에는 적합하지 않습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "스파스 테이블",
+        "정적 질의",
+        "전처리"
+      ],
+      "optional": [
+        "RMQ"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 48,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-049",
+    "topic": "Data Structure",
+    "subtopic": "Complexity",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "선형 자료구조와 비선형 자료구조의 차이는 무엇인가요?",
+    "answer": {
+      "text": "데이터가 일렬로 연결되는지, 계층이나 네트워크처럼 복합적으로 연결되는지의 차이입니다.",
+      "bullets": [
+        "배열, 리스트, 스택, 큐는 선형 자료구조입니다.",
+        "트리와 그래프는 비선형 자료구조입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "선형 자료구조",
+        "비선형 자료구조",
+        "연결 구조"
+      ],
+      "optional": [
+        "트리",
+        "그래프"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 49,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-050",
+    "topic": "Data Structure",
+    "subtopic": "Implementation",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "재귀와 스택의 관계를 설명해주세요.",
+    "answer": {
+      "text": "재귀 함수 호출은 내부적으로 호출 스택을 사용해 상태를 저장합니다.",
+      "bullets": [
+        "재귀가 깊어지면 스택 오버플로우가 발생할 수 있습니다.",
+        "재귀 알고리즘을 명시적 스택으로 바꿔 구현할 수도 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "재귀",
+        "호출 스택",
+        "스택 오버플로우"
+      ],
+      "optional": [
+        "명시적 스택"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 50,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-051",
+    "topic": "Data Structure",
+    "subtopic": "Implementation",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "큐를 두 개의 스택으로 구현할 수 있나요?",
+    "answer": {
+      "text": "네, 입력용 스택과 출력용 스택을 사용하면 큐를 구현할 수 있습니다.",
+      "bullets": [
+        "enqueue는 입력용 스택에 push합니다.",
+        "dequeue 시 출력용 스택이 비어 있으면 입력용 스택의 원소를 모두 옮긴 뒤 pop합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "큐 구현",
+        "두 개의 스택",
+        "enqueue dequeue"
+      ],
+      "optional": [
+        "amortized"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 51,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-052",
+    "topic": "Data Structure",
+    "subtopic": "Implementation",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "스택을 두 개의 큐로 구현할 수 있나요?",
+    "answer": {
+      "text": "네, 원소를 한 큐에 모은 뒤 push 또는 pop 시 재배치하여 스택 동작을 만들 수 있습니다.",
+      "bullets": [
+        "구현 방식에 따라 push를 비싸게 하거나 pop을 비싸게 할 수 있습니다.",
+        "핵심은 마지막에 들어온 원소가 먼저 나오도록 순서를 재구성하는 것입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "스택 구현",
+        "두 개의 큐",
+        "LIFO"
+      ],
+      "optional": [
+        "재배치"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 52,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-053",
+    "topic": "Data Structure",
+    "subtopic": "Search",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "선형 탐색과 이진 탐색의 차이는 무엇인가요?",
+    "answer": {
+      "text": "선형 탐색은 처음부터 순차적으로 찾고, 이진 탐색은 정렬된 데이터에서 중간을 기준으로 탐색 범위를 절반씩 줄입니다.",
+      "bullets": [
+        "선형 탐색은 O(n)입니다.",
+        "이진 탐색은 정렬된 배열에서 O(log n)입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "선형 탐색",
+        "이진 탐색",
+        "정렬"
+      ],
+      "optional": [
+        "O(n)",
+        "O(log n)"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 53,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-054",
+    "topic": "Data Structure",
+    "subtopic": "Search",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "이진 탐색이 연결 리스트보다 배열에서 더 적합한 이유는 무엇인가요?",
+    "answer": {
+      "text": "이진 탐색은 중간 원소에 즉시 접근해야 하는데, 배열은 인덱스로 O(1) 접근이 가능하지만 연결 리스트는 순차 접근만 가능하기 때문입니다.",
+      "bullets": [
+        "연결 리스트에서는 중간 노드를 찾는 데 O(n)이 필요합니다.",
+        "따라서 연결 리스트에 이진 탐색을 적용해도 장점이 줄어듭니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "이진 탐색",
+        "배열",
+        "연결 리스트"
+      ],
+      "optional": [
+        "임의 접근",
+        "순차 접근"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 54,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-055",
+    "topic": "Data Structure",
+    "subtopic": "Sorting",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "정렬 알고리즘과 자료구조는 어떤 관계가 있나요?",
+    "answer": {
+      "text": "자료구조 선택에 따라 정렬의 구현 방식과 성능 특성이 달라질 수 있습니다.",
+      "bullets": [
+        "배열은 인덱스 기반 정렬 구현에 적합합니다.",
+        "힙을 이용하면 힙 정렬, BST를 이용하면 트리 기반 정렬 아이디어를 적용할 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "정렬",
+        "자료구조",
+        "배열"
+      ],
+      "optional": [
+        "힙 정렬",
+        "트리 정렬"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 55,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-056",
+    "topic": "Data Structure",
+    "subtopic": "Memory",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "동적 배열(Dynamic Array)은 어떻게 크기를 늘리나요?",
+    "answer": {
+      "text": "공간이 부족해지면 더 큰 배열을 새로 할당하고 기존 원소를 복사한 뒤 참조를 바꿉니다.",
+      "bullets": [
+        "평소 push는 O(1)에 가깝지만 resize 시 O(n)이 들 수 있습니다.",
+        "평균적으로는 amortized O(1) append 성능을 기대할 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "동적 배열",
+        "resize",
+        "amortized"
+      ],
+      "optional": [
+        "append",
+        "복사"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 56,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-057",
+    "topic": "Data Structure",
+    "subtopic": "Memory",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "얕은 복사와 깊은 복사의 차이는 무엇인가요?",
+    "answer": {
+      "text": "얕은 복사는 참조만 복사하고, 깊은 복사는 내부 객체까지 별도로 복제합니다.",
+      "bullets": [
+        "중첩 구조에서는 얕은 복사 시 원본과 복사본이 내부 데이터를 공유할 수 있습니다.",
+        "자료구조를 안전하게 복제할 때 깊은 복사가 필요할 수 있습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "얕은 복사",
+        "깊은 복사",
+        "참조"
+      ],
+      "optional": [
+        "중첩 구조"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 57,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-058",
+    "topic": "Data Structure",
+    "subtopic": "Applications",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "LRU 캐시는 어떤 자료구조 조합으로 구현하나요?",
+    "answer": {
+      "text": "보통 해시 테이블과 이중 연결 리스트를 함께 사용합니다.",
+      "bullets": [
+        "해시 테이블로 키를 빠르게 찾고, 이중 연결 리스트로 사용 순서를 관리합니다.",
+        "조회나 갱신 시 최근 사용한 노드를 앞으로 이동시킵니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "LRU 캐시",
+        "해시 테이블",
+        "이중 연결 리스트"
+      ],
+      "optional": [
+        "최근 사용",
+        "O(1)"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 58,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-059",
+    "topic": "Data Structure",
+    "subtopic": "Applications",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "우선순위 큐가 다익스트라 알고리즘에서 왜 중요한가요?",
+    "answer": {
+      "text": "현재까지의 최단 거리가 가장 작은 정점을 빠르게 선택해야 하기 때문입니다.",
+      "bullets": [
+        "최소 힙을 사용하면 가장 작은 거리의 정점을 효율적으로 꺼낼 수 있습니다.",
+        "전체 알고리즘의 성능 향상에 핵심 역할을 합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "우선순위 큐",
+        "다익스트라",
+        "최소 힙"
+      ],
+      "optional": [
+        "최단 거리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 59,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  },
+  {
+    "id": "ds-060",
+    "topic": "Data Structure",
+    "subtopic": "Applications",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "문제에 맞는 자료구조를 선택할 때 어떤 기준을 보나요?",
+    "answer": {
+      "text": "탐색, 삽입, 삭제, 정렬, 메모리 사용량, 구현 난이도, 데이터 특성을 종합적으로 고려합니다.",
+      "bullets": [
+        "읽기가 많으면 배열이나 해시 기반 구조가 유리할 수 있습니다.",
+        "중간 삽입과 삭제가 많으면 연결 리스트나 균형 트리를 고려할 수 있습니다.",
+        "우선순위 처리가 핵심이면 힙, 계층 구조면 트리, 연결 관계면 그래프가 적합합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "자료구조 선택",
+        "탐색 삽입 삭제",
+        "문제 특성"
+      ],
+      "optional": [
+        "메모리",
+        "구현 난이도"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 60,
+    "followUps": {
+      "default": [],
+      "byAnswer": []
+    }
+  }
+]

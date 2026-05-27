@@ -1,0 +1,179 @@
+[
+  {
+    "id": "cpp-001",
+    "topic": "C++",
+    "subtopic": "OOP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "C++에서 클래스(Class)와 구조체(struct)의 차이점을 설명해주세요.",
+    "answer": {
+      "text": "C++에서 class와 struct는 기능적으로 거의 동일하지만, 기본 접근 지정자가 다릅니다. class는 기본적으로 private이고, struct는 기본적으로 public입니다.",
+      "bullets": [
+        "class: 기본 접근 지정자 private — 캡슐화, OOP 설계에 주로 사용",
+        "struct: 기본 접근 지정자 public — 단순 데이터 묶음, C 호환에 주로 사용",
+        "상속 시에도 차이: class는 기본 private 상속, struct는 기본 public 상속",
+        "실제로는 관례적 차이이며, 두 키워드 모두 멤버 함수·생성자·상속 모두 지원"
+      ]
+    },
+    "keywords": {
+      "required": ["class", "struct", "접근 지정자", "private", "public"],
+      "optional": ["캡슐화", "상속", "관례"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-002",
+    "topic": "C++",
+    "subtopic": "메모리 관리",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C++의 RAII(Resource Acquisition Is Initialization) 패턴을 설명하고, 스마트 포인터와의 관계를 설명해주세요.",
+    "answer": {
+      "text": "RAII는 자원의 획득을 객체 생성(초기화)에, 자원의 해제를 객체 소멸(소멸자)에 연결하는 C++ 관용 패턴입니다. 이를 통해 예외 발생 시에도 자원 누수를 방지합니다.",
+      "bullets": [
+        "생성자에서 자원 획득, 소멸자에서 자원 해제 — 스코프를 벗어나면 자동 해제",
+        "unique_ptr: 단독 소유권, 복사 불가·이동 가능, delete 자동 호출",
+        "shared_ptr: 참조 카운팅 기반 공유 소유권, 카운트가 0이 되면 자동 delete",
+        "weak_ptr: shared_ptr의 순환 참조 방지, 소유권 없음",
+        "raw pointer + delete 대신 스마트 포인터 사용이 현대 C++ 권장 방식"
+      ]
+    },
+    "keywords": {
+      "required": ["RAII", "스마트 포인터", "소멸자", "unique_ptr", "shared_ptr"],
+      "optional": ["weak_ptr", "참조 카운팅", "순환 참조", "메모리 누수"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-003",
+    "topic": "C++",
+    "subtopic": "OOP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C++의 가상 함수(Virtual Function)와 순수 가상 함수(Pure Virtual Function)를 설명하고, vtable의 역할을 말씀해주세요.",
+    "answer": {
+      "text": "가상 함수는 런타임 다형성을 구현하는 메커니즘입니다. virtual 키워드를 붙이면 파생 클래스에서 오버라이드된 함수가 런타임에 호출됩니다.",
+      "bullets": [
+        "가상 함수: virtual void draw() — 포인터/참조를 통해 호출 시 실제 객체 타입의 함수 호출",
+        "순수 가상 함수: virtual void draw() = 0 — 추상 클래스 생성, 직접 인스턴스화 불가",
+        "vtable: 클래스마다 가상 함수 포인터 테이블을 유지 — 런타임에 이 테이블을 통해 함수 디스패치",
+        "vptr: 각 객체는 자신의 클래스 vtable을 가리키는 숨겨진 포인터를 가짐 (객체 크기 증가)"
+      ]
+    },
+    "keywords": {
+      "required": ["가상 함수", "순수 가상 함수", "vtable", "런타임 다형성"],
+      "optional": ["vptr", "추상 클래스", "오버라이드", "동적 디스패치"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-004",
+    "topic": "C++",
+    "subtopic": "STL",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C++ STL에서 vector와 list의 차이점을 설명하고, 각각 어떤 상황에 사용하는지 말씀해주세요.",
+    "answer": {
+      "text": "std::vector는 동적 배열로 연속된 메모리를 사용하며, std::list는 이중 연결 리스트로 비연속 메모리를 사용합니다.",
+      "bullets": [
+        "vector: 임의 접근 O(1), 끝에서 삽입/삭제 O(1) 분할 상환, 중간 삽입/삭제 O(n), 캐시 친화적",
+        "list: 임의 접근 O(n), 어디서나 삽입/삭제 O(1) (반복자 있을 때), 메모리 오버헤드 큼",
+        "대부분의 상황에서 vector가 더 효율적 — 캐시 효율과 메모리 지역성 덕분",
+        "중간 삽입/삭제가 빈번하고 반복자 무효화를 피해야 할 때 list 고려"
+      ]
+    },
+    "keywords": {
+      "required": ["vector", "list", "임의 접근", "연속 메모리"],
+      "optional": ["캐시 지역성", "반복자", "분할 상환", "deque"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-005",
+    "topic": "C++",
+    "subtopic": "이동 시맨틱",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "C++11에서 도입된 이동 시맨틱(Move Semantics)과 우측값 참조(rvalue reference)를 설명해주세요.",
+    "answer": {
+      "text": "이동 시맨틱은 불필요한 복사를 피하고 자원을 '이동'할 수 있게 하는 C++11 기능입니다. && 연산자로 우측값 참조를 나타내며, std::move로 명시적 이동을 요청합니다.",
+      "bullets": [
+        "lvalue: 이름이 있고 주소를 취할 수 있는 값, rvalue: 임시 값(이름 없음)",
+        "이동 생성자: MyClass(MyClass&& other) — 자원 소유권 이전, 불필요한 깊은 복사 회피",
+        "std::move: lvalue를 rvalue로 캐스팅 — 실제 이동은 수신자의 이동 생성자/대입 연산자가 수행",
+        "활용: 컨테이너에 큰 객체를 넣을 때, 함수에서 객체를 반환할 때 (RVO와 함께)"
+      ]
+    },
+    "keywords": {
+      "required": ["이동 시맨틱", "rvalue reference", "std::move", "이동 생성자"],
+      "optional": ["lvalue", "RVO", "복사 생략", "&&"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-006",
+    "topic": "C++",
+    "subtopic": "템플릿",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "C++ 템플릿(Template)이란 무엇이며, 함수 템플릿과 클래스 템플릿을 예시와 함께 설명해주세요.",
+    "answer": {
+      "text": "템플릿은 타입을 매개변수로 받아 코드를 일반화하는 C++의 컴파일 타임 다형성 기능입니다.",
+      "bullets": [
+        "함수 템플릿: template<typename T> T max(T a, T b) { return a > b ? a : b; }",
+        "클래스 템플릿: template<typename T> class Stack { ... }; — STL 컨테이너가 이 방식",
+        "인스턴스화: 컴파일 타임에 사용된 타입별로 코드를 자동 생성 → 코드 중복 증가(코드 bloat) 가능",
+        "템플릿 특수화: 특정 타입에 대해 별도 구현 제공 가능"
+      ]
+    },
+    "keywords": {
+      "required": ["템플릿", "타입 매개변수", "컴파일 타임", "일반화"],
+      "optional": ["함수 템플릿", "클래스 템플릿", "특수화", "인스턴스화"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-007",
+    "topic": "C++",
+    "subtopic": "생성자/소멸자",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "C++에서 생성자(Constructor)와 소멸자(Destructor)의 역할과, 복사 생성자가 필요한 이유를 설명해주세요.",
+    "answer": {
+      "text": "생성자는 객체가 생성될 때 자동으로 호출되어 초기화를 수행하고, 소멸자는 객체가 스코프를 벗어날 때 자동으로 호출되어 자원을 해제합니다.",
+      "bullets": [
+        "기본 생성자: 인자 없이 호출, 컴파일러가 자동 생성 (명시적 생성자 없을 때)",
+        "복사 생성자: MyClass(const MyClass& other) — 깊은 복사(deep copy)가 필요할 때 직접 정의",
+        "얕은 복사 문제: 포인터 멤버를 얕게 복사하면 두 객체가 같은 메모리를 가리켜 double-free 발생",
+        "Rule of Three/Five: 소멸자, 복사 생성자, 복사 대입 연산자 중 하나를 정의하면 나머지도 정의 권장"
+      ]
+    },
+    "keywords": {
+      "required": ["생성자", "소멸자", "복사 생성자", "깊은 복사"],
+      "optional": ["얕은 복사", "Rule of Three", "double-free"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "cpp-008",
+    "topic": "C++",
+    "subtopic": "상속",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C++에서 다중 상속(Multiple Inheritance)과 다이아몬드 문제(Diamond Problem)를 설명하고, 가상 상속으로 어떻게 해결하는지 설명해주세요.",
+    "answer": {
+      "text": "C++은 한 클래스가 여러 부모 클래스를 상속받는 다중 상속을 지원합니다. 다이아몬드 문제는 두 부모가 공통 조상을 공유할 때 해당 조상의 멤버가 중복으로 존재하는 문제입니다.",
+      "bullets": [
+        "다이아몬드: A → B, A → C, B·C → D 상속 시 D 객체에 A의 멤버가 두 벌 존재",
+        "가상 상속: class B : virtual public A {} — 공통 조상의 인스턴스를 하나만 유지",
+        "virtual 상속을 쓰면 vptr과 유사한 추가 포인터가 생겨 메모리·성능 오버헤드 발생",
+        "Java/C#은 다중 상속을 금지하고 인터페이스로 대안 제공 — C++의 다중 상속보다 안전"
+      ]
+    },
+    "keywords": {
+      "required": ["다중 상속", "다이아몬드 문제", "가상 상속", "virtual"],
+      "optional": ["중복 멤버", "인터페이스", "오버헤드"]
+    },
+    "isActive": true
+  }
+]

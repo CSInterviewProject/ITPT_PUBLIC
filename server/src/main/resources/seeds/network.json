@@ -1,0 +1,759 @@
+[
+  {
+    "id": "net-001",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "TCP와 UDP의 차이점에 대해 설명해주세요.",
+    "answer": {
+      "text": "TCP는 연결 지향형 프로토콜로 신뢰성을 보장하며, UDP는 비연결형 프로토콜로 속도를 중시합니다.",
+      "bullets": [
+        "TCP는 Receiver와 Sender 사이에 연결을 만드는 연결 지향형 프로토콜입니다.",
+        "TCP는 데이터를 순서대로 송수신하지만, UDP는 순서가 보장되지 않습니다.",
+        "TCP는 흐름 제어(Flow Control)와 혼잡 제어(Congestion Control)를 수행합니다.",
+        "UDP는 오버헤드가 적어 스트리밍에 적합하고, TCP는 신뢰성이 중요한 서비스에 사용됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "TCP",
+        "UDP",
+        "연결 지향",
+        "비연결형"
+      ],
+      "optional": [
+        "흐름제어",
+        "혼잡제어"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 1,
+    "followUps": {
+      "default": [
+        "net-004",
+        "net-009"
+      ]
+    }
+  },
+  {
+    "id": "net-002",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "DNS와 DHCP는 UDP와 TCP 중 어떤 프로토콜을 사용할까요?",
+    "answer": {
+      "text": "DNS와 DHCP는 주로 UDP를 사용합니다.",
+      "bullets": [
+        "연결을 맺는 비용(Handshake)이 데이터 크기에 비해 크기 때문에 효율성을 위해 UDP를 사용합니다.",
+        "특히 Root DNS는 수많은 요청에 대해 일일이 TCP 연결을 유지하기에 부하가 너무 크기 때문입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "UDP",
+        "DNS",
+        "DHCP"
+      ],
+      "optional": [
+        "연결 비용"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 2
+  },
+  {
+    "id": "net-003",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "UDP, TCP의 세그먼트는 데이터의 무결성을 어떻게 확인하나요?",
+    "answer": {
+      "text": "헤더의 Checksum 필드를 통해 데이터 변경 여부를 확인합니다.",
+      "bullets": [
+        "Sender는 세그먼트의 Content와 Header 값을 더한 뒤 1의 보수를 취해 checksum 필드에 넣습니다.",
+        "Receiver는 수신한 데이터의 합과 checksum을 대조하여 에러 발생 여부를 탐지합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Checksum",
+        "무결성",
+        "1의 보수"
+      ],
+      "optional": [
+        "에러 탐지"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 3
+  },
+  {
+    "id": "net-004",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "TCP 3-way handshake에 대해서 설명해주세요.",
+    "answer": {
+      "text": "TCP 통신을 시작하기 전, 신뢰성 있는 연결(가상 회선)을 설정하는 과정입니다.",
+      "bullets": [
+        "1. 클라이언트가 서버에 SYN 패킷을 전송합니다.",
+        "2. 서버는 SYN을 수락하고 ACK와 함께 자신의 SYN을 전송합니다.",
+        "3. 클라이언트가 다시 서버에 ACK를 전송하면 연결이 확립됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "3-way handshake",
+        "SYN",
+        "ACK"
+      ],
+      "optional": [
+        "가상 회선"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 4
+  },
+  {
+    "id": "net-005",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "TCP 4-way handshake에 대해서 설명해주세요.",
+    "answer": {
+      "text": "데이터 전송이 완료된 후, 설정된 TCP 연결을 해제하는 단계입니다.",
+      "bullets": [
+        "1. 클라이언트가 종료 요청인 FIN 플래그를 전송합니다.",
+        "2. 서버는 확인 메시지(ACK)를 보내고 남은 데이터를 마저 전송합니다.",
+        "3. 전송이 끝나면 서버도 종료 요청(FIN)을 보냅니다.",
+        "4. 클라이언트가 ACK를 보내면 연결이 최종 종료됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "4-way handshake",
+        "FIN",
+        "ACK"
+      ],
+      "optional": [
+        "연결 해제"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 5
+  },
+  {
+    "id": "net-006",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "왜 연결을 끊을 때는 4-way handshake를 할까요?",
+    "answer": {
+      "text": "클라이언트가 통신을 끝내고 싶어도 서버 측에서 아직 보낼 데이터가 남아있을 수 있기 때문입니다.",
+      "bullets": [
+        "서버는 일단 ACK만 보내고, 전송 중인 데이터를 다 보낸 후에야 FIN을 보냄으로써 데이터 손실을 방지합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "데이터 손실 방지",
+        "서버 잔여 데이터"
+      ],
+      "optional": []
+    },
+    "isActive": true,
+    "sortOrder": 6
+  },
+  {
+    "id": "net-007",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Time-wait이란 무엇일까요?",
+    "answer": {
+      "text": "TCP 연결 해제 시, 클라이언트가 일정 시간(기본 240초) 동안 소켓을 열어두고 기다리는 상태입니다.",
+      "bullets": [
+        "지연된 패킷이 뒤늦게 도착할 경우 데이터 유실을 방지합니다.",
+        "마지막 ACK가 서버에 제대로 전달되지 않아 서버가 다시 FIN을 보내는 상황에 대비합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "TIME_WAIT",
+        "지연 패킷"
+      ],
+      "optional": [
+        "재전송"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 7
+  },
+  {
+    "id": "net-008",
+    "topic": "Network",
+    "subtopic": "TCP & UDP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "TCP와 UDP 패킷 구조에는 어떤 차이가 있을까요?",
+    "answer": {
+      "text": "UDP는 최소한의 정보만 가진 간단한 헤더를 가지며, TCP는 신뢰성 관리를 위해 복잡한 헤더를 가집니다.",
+      "bullets": [
+        "UDP 헤더: Source Port, Destination Port, Length, Checksum.",
+        "TCP 헤더: UDP 요소 외에 Sequence Number, Acknowledgment Number, Data Offset, Window Size 등을 추가로 포함합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "헤더 구조",
+        "Sequence Number",
+        "Port"
+      ],
+      "optional": [
+        "오버헤드"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 8
+  },
+  {
+    "id": "net-009",
+    "topic": "Network",
+    "subtopic": "흐름제어와 혼잡제어",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "흐름제어와 혼잡 제어에 대해 설명해주세요.",
+    "answer": {
+      "text": "흐름제어는 송수신자 간의 속도 차이를 조절하는 것이고, 혼잡제어는 네트워크 내의 혼잡을 조절하는 것입니다.",
+      "bullets": [
+        "흐름제어(Flow Control): 수신자의 버퍼 오버플로우 방지를 위해 rwnd 값을 이용합니다.",
+        "혼잡제어(Congestion Control): 네트워크 내 패킷 수가 과도하게 늘지 않도록 cwnd 값을 이용합니다.",
+        "최종 윈도우 사이즈는 min(cwnd, rwnd)로 결정됩니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "흐름제어",
+        "혼잡제어",
+        "rwnd",
+        "cwnd"
+      ],
+      "optional": [
+        "버퍼 오버플로우"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 9
+  },
+  {
+    "id": "net-010",
+    "topic": "Network",
+    "subtopic": "흐름제어와 혼잡제어",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "혼잡제어에서 윈도우 사이즈가 상황에 따라 어떻게 변경되는지 설명해주세요.",
+    "answer": {
+      "text": "주로 AIMD 방식을 기반으로 하며 초기 효율을 위해 Slow Start를 사용합니다.",
+      "bullets": [
+        "AIMD: 성공 시 윈도우를 1씩 증가시키고, 패킷 손실 시 절반으로 줄입니다.",
+        "Slow Start: 시작 시에는 2배씩 지수적으로 늘리다가 임계치(Threshold)에 도달하면 선형적으로 늘립니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "AIMD",
+        "Slow Start"
+      ],
+      "optional": [
+        "임계치"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 10
+  },
+  {
+    "id": "net-011",
+    "topic": "Network",
+    "subtopic": "흐름제어와 혼잡제어",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "혼잡제어에서 Timeout 발생 시와 패킷 손실 시 윈도우 사이즈 변화의 차이는?",
+    "answer": {
+      "text": "Timeout은 훨씬 심각한 상황으로 간주하여 윈도우를 더 크게 줄입니다.",
+      "bullets": [
+        "Timeout: 윈도우 사이즈를 1로 줄이고 다시 Slow Start를 시작합니다.",
+        "패킷 손실(3-ACK Duplicated): 윈도우를 절반으로 줄이고 선형적으로 증가(AIMD)시킵니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Timeout",
+        "3-ACK",
+        "윈도우 조절"
+      ],
+      "optional": [
+        "고속 재전송"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 11
+  },
+  {
+    "id": "net-012",
+    "topic": "Network",
+    "subtopic": "흐름제어와 혼잡제어",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "흐름제어기법 중 슬라이딩 윈도우 방식에 대해 설명해주세요.",
+    "answer": {
+      "text": "매번 ACK를 기다리지 않고, 정해진 윈도우 크기 내에서 여러 패킷을 연속해서 보내는 방식입니다.",
+      "bullets": [
+        "수신 측의 처리 능력에 따라 윈도우 크기를 동적으로 조절하며 이동(Sliding)합니다.",
+        "Go-Back-N: 에러 발생 지점부터 모든 패킷을 재전송합니다.",
+        "Selective Retransmission: 에러가 발생한 특정 패킷만 재전송합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "슬라이딩 윈도우",
+        "Go-Back-N",
+        "SR"
+      ],
+      "optional": [
+        "연속 전송"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 12
+  },
+  {
+    "id": "net-013",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "OSI 7계층에 대해 설명해주세요.",
+    "answer": {
+      "text": "국제 표준화 기구에서 정의한 네트워크 통신 과정을 7개 단계로 나눈 모델입니다.",
+      "bullets": [
+        "물리, 데이터링크, 네트워크, 전송, 세션, 표현, 응용 계층으로 나뉩니다.",
+        "모듈화를 통해 각 계층의 독립성을 보장하고 유지보수를 쉽게 합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "OSI 7계층",
+        "모듈화"
+      ],
+      "optional": [
+        "ISO"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 13
+  },
+  {
+    "id": "net-014",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "OSI 1계층(물리 계층)의 역할과 장비를 설명해주세요.",
+    "answer": {
+      "text": "전기적 신호를 전달하는 최하위 계층입니다.",
+      "bullets": [
+        "주요 장비: 허브, 리피터, 케이블.",
+        "PDU(데이터 단위): Bits."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "물리 계층",
+        "허브",
+        "Bits"
+      ],
+      "optional": []
+    },
+    "isActive": true,
+    "sortOrder": 14
+  },
+  {
+    "id": "net-015",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "OSI 2계층(데이터 링크 계층)의 역할과 장비를 설명해주세요.",
+    "answer": {
+      "text": "물리적 매체를 통해 신뢰성 있는 데이터를 전송하며 MAC 주소를 사용합니다.",
+      "bullets": [
+        "주요 장비: 스위치, 브릿지.",
+        "PDU(데이터 단위): Frames."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "데이터 링크 계층",
+        "MAC 주소",
+        "Frames"
+      ],
+      "optional": [
+        "스위치"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 15
+  },
+  {
+    "id": "net-016",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "OSI 3계층(네트워크 계층)의 역할과 장비를 설명해주세요.",
+    "answer": {
+      "text": "논리적 주소(IP)를 사용하여 최적의 경로를 찾아주는 라우팅을 담당합니다.",
+      "bullets": [
+        "주요 장비: 라우터.",
+        "PDU(데이터 단위): Packets."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "네트워크 계층",
+        "IP",
+        "라우팅"
+      ],
+      "optional": [
+        "Packets"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 16
+  },
+  {
+    "id": "net-017",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "OSI 4계층(전송 계층)의 역할과 장비를 설명해주세요.",
+    "answer": {
+      "text": "종단 간(End-to-End) 신뢰성 있는 데이터 전송을 보장합니다.",
+      "bullets": [
+        "주요 장비: L4 로드밸런서.",
+        "PDU(데이터 단위): Segments."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "전송 계층",
+        "L4",
+        "Segments"
+      ],
+      "optional": [
+        "TCP/UDP"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 17
+  },
+  {
+    "id": "net-018",
+    "topic": "Network",
+    "subtopic": "OSI 7계층",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "인캡슐레이션과 디캡슐레이션에 대해 설명해주세요.",
+    "answer": {
+      "text": "데이터가 계층을 거치며 헤더가 붙거나 제거되는 과정입니다.",
+      "bullets": [
+        "인캡슐레이션: 상위에서 하위 계층으로 갈 때 각 계층의 헤더를 덧붙입니다.",
+        "디캡슐레이션: 수신 측에서 하위에서 상위로 갈 때 헤더를 하나씩 제거하며 분석합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "인캡슐레이션",
+        "디캡슐레이션",
+        "헤더"
+      ],
+      "optional": []
+    },
+    "isActive": true,
+    "sortOrder": 18
+  },
+  {
+    "id": "net-019",
+    "topic": "Network",
+    "subtopic": "TCP/IP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "TCP/IP란 무엇일까요?",
+    "answer": {
+      "text": "인터넷 통신의 표준 프로토콜 스위트로, 데이터 전송과 신뢰성을 담당합니다.",
+      "bullets": [
+        "IP는 데이터 전달을, TCP는 데이터의 정확한 전송 순서와 무결성을 보장합니다.",
+        "OSI 7계층과 달리 실무 중심의 4계층 구조를 가집니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "TCP/IP",
+        "인터넷 표준"
+      ],
+      "optional": [
+        "4계층"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 19
+  },
+  {
+    "id": "net-020",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "HTTP란 무엇일까요?",
+    "answer": {
+      "text": "클라이언트와 서버가 웹에서 데이터를 주고받기 위한 애플리케이션 계층 프로토콜입니다.",
+      "bullets": [
+        "Stateless(상태 비저장) 특성을 가져 서버가 클라이언트 상태를 유지하지 않습니다.",
+        "80번 포트를 기본으로 사용합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "HTTP",
+        "Stateless"
+      ],
+      "optional": [
+        "80포트"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 20
+  },
+  {
+    "id": "net-021",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "HTTPS와 SSL/TLS에 대해 설명해주세요.",
+    "answer": {
+      "text": "HTTP에 암호화 프로토콜(SSL/TLS)을 추가하여 보안을 강화한 프로토콜입니다.",
+      "bullets": [
+        "443번 포트를 사용합니다.",
+        "공개키와 대칭키 방식을 혼합하여 데이터를 안전하게 교환합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "HTTPS",
+        "SSL/TLS",
+        "443포트"
+      ],
+      "optional": [
+        "암호화"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 21
+  },
+  {
+    "id": "net-022",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "대칭키와 공개키 암호화 방식에 대해 설명해주세요.",
+    "answer": {
+      "text": "대칭키는 동일한 키로 암/복호화를 하며, 공개키는 한 쌍의 키(Public/Private)를 사용합니다.",
+      "bullets": [
+        "대칭키: 속도가 빠르지만 키 전달 시 탈취 위험이 있습니다.",
+        "공개키: 키 전달이 안전하지만 연산 속도가 상대적으로 느립니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "대칭키",
+        "공개키"
+      ],
+      "optional": [
+        "SSL"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 22
+  },
+  {
+    "id": "net-023",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "SSL/TLS 통신 과정을 설명해주세요.",
+    "answer": {
+      "text": "공개키 방식으로 세션키(대칭키)를 안전하게 교환한 뒤, 이후 통신은 대칭키로 진행합니다.",
+      "bullets": [
+        "Client Hello -> Server Hello 단계를 거쳐 인증서와 지원 암호화 방식을 확인합니다.",
+        "Pre-master secret을 서버의 공개키로 암호화하여 전달함으로써 대칭키를 생성합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "Handshake",
+        "세션키",
+        "인증서"
+      ],
+      "optional": [
+        "Pre-master secret"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 23
+  },
+  {
+    "id": "net-024",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "HTTP 1.0, 1.1, 2.0의 차이점은 무엇인가요?",
+    "answer": {
+      "text": "성능 개선을 위해 연결 유지와 다중화를 도입해왔습니다.",
+      "bullets": [
+        "1.0: 매 요청마다 연결을 새로 맺음.",
+        "1.1: Persistent Connection(Keep-Alive)과 파이프라이닝 도입.",
+        "2.0: Multiplexing을 통해 여러 요청을 동시에 처리하며 헤더 압축을 사용합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "HTTP/1.1",
+        "HTTP/2.0",
+        "Multiplexing"
+      ],
+      "optional": [
+        "Keep-Alive"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 24
+  },
+  {
+    "id": "net-025",
+    "topic": "Network",
+    "subtopic": "HTTP & HTTPS",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "쿠키(Cookie)와 세션(Session)의 차이는?",
+    "answer": {
+      "text": "데이터의 저장 위치와 보안성에서 차이가 있습니다.",
+      "bullets": [
+        "쿠키: 클라이언트(브라우저)에 저장되며 보안이 상대적으로 취약합니다.",
+        "세션: 서버에 저장되며 세션 ID만 클라이언트에 전달되어 보안성이 더 높습니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "쿠키",
+        "세션",
+        "저장 위치"
+      ],
+      "optional": []
+    },
+    "isActive": true,
+    "sortOrder": 25
+  },
+  {
+    "id": "net-026",
+    "topic": "Network",
+    "subtopic": "gRPC",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "gRPC란 무엇이고 어떤 장점이 있나요?",
+    "answer": {
+      "text": "구글에서 개발한 고성능 RPC 프레임워크로, HTTP/2를 기반으로 Protocol Buffers를 사용합니다.",
+      "bullets": [
+        "JSON 대비 리소스 사용량이 적어 네트워크 속도가 빠릅니다.",
+        "서버-클라이언트 간 양방향 스트리밍을 지원하며 다양한 언어를 지원합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "gRPC",
+        "Protocol Buffers",
+        "HTTP/2"
+      ],
+      "optional": [
+        "Binary Serializer"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 26
+  },
+  {
+    "id": "net-027",
+    "topic": "Network",
+    "subtopic": "NAT & IP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "NAT(Network Address Translation)이란 무엇인가요?",
+    "answer": {
+      "text": "사설 IP 주소를 공인 IP 주소로 변환하거나 그 반대의 과정을 수행하는 기술입니다.",
+      "bullets": [
+        "한정된 공인 IP 주소를 절약할 수 있습니다.",
+        "내부 네트워크 주소를 숨길 수 있어 보안성이 강화됩니다.",
+        "가정용 공유기가 대표적인 NAT 장비입니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "NAT",
+        "IP 변환",
+        "공유기"
+      ],
+      "optional": [
+        "주소 절약"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 27
+  },
+  {
+    "id": "net-028",
+    "topic": "Network",
+    "subtopic": "NAT & IP",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "공인 IP와 사설 IP의 차이점은 무엇인가요?",
+    "answer": {
+      "text": "전 세계에서 유일한 주소인지, 특정 내부 네트워크에서만 쓰는 주소인지의 차이입니다.",
+      "bullets": [
+        "공인 IP: 전 세계적으로 고유하며 인터넷에 직접 연결된 주소입니다.",
+        "사설 IP: 로컬 네트워크 내부에서 할당되며 인터넷 접속 시 NAT을 통해 공인 IP로 변환되어야 합니다."
+      ]
+    },
+    "keywords": {
+      "required": [
+        "공인 IP",
+        "사설 IP"
+      ],
+      "optional": [
+        "RFC 1918"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 28
+  }
+]

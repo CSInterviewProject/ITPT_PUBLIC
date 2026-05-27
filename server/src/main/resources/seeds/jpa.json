@@ -1,0 +1,314 @@
+[
+  {
+    "id": "jpa-001",
+    "topic": "JPA",
+    "subtopic": "ORM",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "ORM이란 무엇일까요?",
+    "answer": {
+      "text": "ORM은 객체와 관계형 데이터베이스의 테이블을 매핑해 객체 중심으로 데이터를 다룰 수 있게 하는 기술입니다. 개발자는 SQL 중심이 아니라 엔티티 중심으로 도메인을 표현할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "객체",
+        "관계형 데이터베이스",
+        "매핑"
+      ],
+      "optional": [
+        "엔티티",
+        "테이블",
+        "도메인"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 1
+  },
+  {
+    "id": "jpa-002",
+    "topic": "JPA",
+    "subtopic": "ORM",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "ORM의 장점과 단점은 무엇일까요?",
+    "answer": {
+      "text": "장점은 생산성 향상, 객체지향적인 코드 작성, 반복 SQL 감소입니다. 단점은 복잡한 쿼리에서 성능 이슈가 생길 수 있고, 동작 원리를 이해하지 못하면 예상치 못한 문제가 발생할 수 있다는 점입니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "생산성",
+        "객체지향",
+        "성능 이슈"
+      ],
+      "optional": [
+        "반복 SQL 감소",
+        "학습 비용",
+        "복잡한 쿼리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 2
+  },
+  {
+    "id": "jpa-003",
+    "topic": "JPA",
+    "subtopic": "Basics",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "JPA와 Hibernate의 차이는 무엇일까요?",
+    "answer": {
+      "text": "JPA는 자바 진영의 ORM 표준 명세이고, Hibernate는 그 JPA를 구현한 대표적인 구현체입니다. 즉 JPA는 인터페이스나 규약에 가깝고, Hibernate는 실제 동작을 제공하는 프레임워크입니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "표준 명세",
+        "구현체",
+        "Hibernate"
+      ],
+      "optional": [
+        "ORM",
+        "규약",
+        "프레임워크"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 3
+  },
+  {
+    "id": "jpa-004",
+    "topic": "JPA",
+    "subtopic": "Basics",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "왜 JPA를 사용할까요?",
+    "answer": {
+      "text": "JPA를 사용하면 반복적인 CRUD SQL을 줄이고 객체 중심으로 도메인을 설계할 수 있습니다. 또한 영속성 컨텍스트, 변경 감지 같은 기능을 통해 생산성과 유지보수성을 높일 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "CRUD",
+        "객체 중심",
+        "변경 감지"
+      ],
+      "optional": [
+        "생산성",
+        "유지보수성",
+        "영속성 컨텍스트"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 4
+  },
+  {
+    "id": "jpa-005",
+    "topic": "JPA",
+    "subtopic": "PersistenceContext",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "영속성 컨텍스트에 대해 설명해주세요.",
+    "answer": {
+      "text": "영속성 컨텍스트는 엔티티를 저장하고 관리하는 1차 캐시 같은 공간입니다. 같은 트랜잭션 내에서 엔티티의 동일성을 보장하고, 변경 감지와 쓰기 지연 같은 기능의 기반이 됩니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "1차 캐시",
+        "동일성 보장",
+        "변경 감지"
+      ],
+      "optional": [
+        "쓰기 지연",
+        "엔티티 관리",
+        "트랜잭션"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 5
+  },
+  {
+    "id": "jpa-006",
+    "topic": "JPA",
+    "subtopic": "PersistenceContext",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Flush는 언제 발생할까요?",
+    "answer": {
+      "text": "Flush는 영속성 컨텍스트의 변경 내용을 데이터베이스에 반영하는 과정입니다. 보통 트랜잭션 커밋 시점, JPQL 실행 전, 또는 직접 flush를 호출할 때 발생할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "커밋 시점",
+        "JPQL 실행 전",
+        "flush 호출"
+      ],
+      "optional": [
+        "DB 반영",
+        "영속성 컨텍스트",
+        "변경 내용"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 6
+  },
+  {
+    "id": "jpa-007",
+    "topic": "JPA",
+    "subtopic": "EntityManager",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "EntityManager는 여러 스레드에서 공유해도 될까요?",
+    "answer": {
+      "text": "EntityManager는 일반적으로 스레드 안전하지 않기 때문에 여러 스레드가 공유하면 안 됩니다. 보통 트랜잭션이나 요청 단위로 관리되며, 스프링이 이를 적절히 관리해줍니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "스레드 안전하지 않음",
+        "공유 불가",
+        "요청/트랜잭션 단위"
+      ],
+      "optional": [
+        "스프링 관리",
+        "EntityManager",
+        "동시성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 7
+  },
+  {
+    "id": "jpa-008",
+    "topic": "JPA",
+    "subtopic": "Entity",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Entity의 생명주기를 설명해주세요.",
+    "answer": {
+      "text": "엔티티는 비영속, 영속, 준영속, 삭제 상태를 가집니다. 객체가 생성만 된 상태에서 영속성 컨텍스트에 저장되면 영속 상태가 되고, 분리되거나 삭제되면서 상태가 변합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "비영속",
+        "영속",
+        "준영속"
+      ],
+      "optional": [
+        "삭제",
+        "상태 변화",
+        "영속성 컨텍스트"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 8
+  },
+  {
+    "id": "jpa-009",
+    "topic": "JPA",
+    "subtopic": "Entity",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Dirty Checking이란 무엇일까요?",
+    "answer": {
+      "text": "Dirty Checking은 영속 상태의 엔티티 변경을 JPA가 감지해 트랜잭션 커밋 시점에 자동으로 UPDATE SQL을 생성하는 기능입니다. 개발자가 명시적으로 update 메서드를 호출하지 않아도 변경 사항이 반영됩니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "변경 감지",
+        "UPDATE SQL",
+        "영속 상태"
+      ],
+      "optional": [
+        "커밋 시점",
+        "자동 반영",
+        "JPA"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 9
+  },
+  {
+    "id": "jpa-010",
+    "topic": "JPA",
+    "subtopic": "Issues",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "JPA 사용 시 자주 발생하는 문제에는 무엇이 있을까요?",
+    "answer": {
+      "text": "대표적으로 N+1 문제, 지연 로딩에 따른 예상치 못한 쿼리 발생, 영속성 컨텍스트 관리 실수, 그리고 복잡한 쿼리에서의 성능 이슈가 있습니다. 따라서 동작 원리를 이해하고 쿼리를 점검하는 습관이 중요합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "N+1",
+        "지연 로딩",
+        "성능 이슈"
+      ],
+      "optional": [
+        "영속성 컨텍스트",
+        "예상치 못한 쿼리",
+        "동작 원리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 10
+  },
+  {
+    "id": "jpa-011",
+    "topic": "JPA",
+    "subtopic": "Query",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "Fetch Join과 Limit을 함께 사용할 때 어떤 문제가 생길 수 있을까요?",
+    "answer": {
+      "text": "일대다 관계에서 fetch join과 pagination 또는 limit을 함께 사용하면 결과 행이 중복되어 메모리에서 페이징되거나 예상과 다른 결과가 나올 수 있습니다. 특히 컬렉션 fetch join은 페이징과 함께 사용할 때 주의가 필요합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "일대다",
+        "중복 행",
+        "페이징 문제"
+      ],
+      "optional": [
+        "컬렉션 fetch join",
+        "메모리 페이징",
+        "예상과 다른 결과"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 11
+  },
+  {
+    "id": "jpa-012",
+    "topic": "JPA",
+    "subtopic": "Query",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "N+1 문제란 무엇이며, 어떻게 해결할 수 있을까요?",
+    "answer": {
+      "text": "N+1 문제는 연관 엔티티를 조회하는 과정에서 초기 1번의 쿼리 이후 추가로 N번의 쿼리가 발생하는 문제입니다. fetch join, EntityGraph, 배치 사이즈 조정 등을 통해 해결하거나 완화할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "추가 쿼리",
+        "fetch join",
+        "EntityGraph"
+      ],
+      "optional": [
+        "batch size",
+        "연관 엔티티",
+        "성능 최적화"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 12
+  }
+]

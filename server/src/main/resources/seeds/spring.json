@@ -1,0 +1,522 @@
+[
+  {
+    "id": "spring-001",
+    "topic": "Spring",
+    "subtopic": "Core",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "왜 스프링을 사용할까요?",
+    "answer": {
+      "text": "스프링은 객체 지향 설계를 돕는 DI와 IoC를 기반으로 애플리케이션의 결합도를 낮추고 유지보수성을 높여줍니다. 또한 웹, 데이터 접근, 트랜잭션 등 다양한 기능을 일관된 방식으로 제공해 생산성을 높일 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "DI",
+        "IoC",
+        "유지보수성"
+      ],
+      "optional": [
+        "결합도",
+        "생산성",
+        "객체지향"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 1
+  },
+  {
+    "id": "spring-002",
+    "topic": "Spring",
+    "subtopic": "Boot",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "Spring과 Spring Boot의 차이점은 무엇일까요?",
+    "answer": {
+      "text": "Spring은 전반적인 애플리케이션 개발을 위한 프레임워크이고, Spring Boot는 그 위에서 설정을 자동화하고 실행 환경을 단순화해 빠르게 서비스를 만들 수 있게 해줍니다. 예를 들어 내장 톰캣, 자동 설정, starter 의존성을 제공합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "자동 설정",
+        "내장 톰캣",
+        "starter"
+      ],
+      "optional": [
+        "Spring Framework",
+        "설정 단순화",
+        "생산성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 2
+  },
+  {
+    "id": "spring-003",
+    "topic": "Spring",
+    "subtopic": "Core",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "DI와 IoC는 무엇일까요?",
+    "answer": {
+      "text": "IoC는 객체의 생성과 생명주기 관리의 주도권이 개발자가 아니라 컨테이너에 있는 개념입니다. DI는 그 IoC를 구현하는 대표적인 방법으로, 필요한 의존 객체를 외부에서 주입받는 방식입니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "IoC",
+        "DI",
+        "컨테이너"
+      ],
+      "optional": [
+        "의존성 주입",
+        "객체 생성",
+        "제어의 역전"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 3
+  },
+  {
+    "id": "spring-004",
+    "topic": "Spring",
+    "subtopic": "Core",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "DIP(Dependency Inversion Principle)란 무엇일까요?",
+    "answer": {
+      "text": "DIP는 고수준 모듈이 저수준 모듈에 직접 의존하지 않고, 둘 다 추상화에 의존해야 한다는 원칙입니다. 이를 통해 구현체 변경에 유연해지고 테스트와 확장성이 좋아집니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "추상화",
+        "고수준 모듈",
+        "저수준 모듈"
+      ],
+      "optional": [
+        "유연성",
+        "인터페이스",
+        "테스트 용이성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 4
+  },
+  {
+    "id": "spring-005",
+    "topic": "Spring",
+    "subtopic": "Bean",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "Bean이란 무엇일까요?",
+    "answer": {
+      "text": "스프링 빈은 스프링 컨테이너가 생성하고 관리하는 객체입니다. 개발자는 빈으로 등록된 객체를 주입받아 사용할 수 있고, 생명주기와 의존성 관리도 컨테이너가 담당합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "스프링 컨테이너",
+        "객체",
+        "관리"
+      ],
+      "optional": [
+        "생명주기",
+        "DI",
+        "ApplicationContext"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 5
+  },
+  {
+    "id": "spring-006",
+    "topic": "Spring",
+    "subtopic": "Bean",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Bean의 라이프사이클에 대해 설명해주세요.",
+    "answer": {
+      "text": "스프링 빈은 생성, 의존성 주입, 초기화, 사용, 소멸의 과정을 거칩니다. 초기화와 소멸 시점에는 init 메서드, destroy 메서드나 관련 어노테이션을 통해 추가 작업을 수행할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "생성",
+        "초기화",
+        "소멸"
+      ],
+      "optional": [
+        "의존성 주입",
+        "init",
+        "destroy"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 6
+  },
+  {
+    "id": "spring-007",
+    "topic": "Spring",
+    "subtopic": "Bean",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Bean Scope에는 무엇이 있을까요?",
+    "answer": {
+      "text": "대표적인 빈 스코프는 singleton, prototype, request, session, application 등이 있습니다. 기본값은 singleton이며, 웹 환경에서는 request나 session 스코프를 상황에 따라 사용할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "singleton",
+        "prototype",
+        "request"
+      ],
+      "optional": [
+        "session",
+        "application",
+        "기본값"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 7
+  },
+  {
+    "id": "spring-008",
+    "topic": "Spring",
+    "subtopic": "Bean",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "@Bean과 @Configuration을 사용하는 상황은 언제일까요?",
+    "answer": {
+      "text": "@Bean은 개발자가 직접 반환 객체를 빈으로 등록할 때 사용하고, @Configuration은 그런 빈 정의를 모아두는 설정 클래스에 사용합니다. 특히 외부 라이브러리 객체처럼 직접 어노테이션을 붙일 수 없는 경우 유용합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "외부 라이브러리",
+        "@Bean",
+        "@Configuration"
+      ],
+      "optional": [
+        "설정 클래스",
+        "빈 등록",
+        "직접 생성"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 8
+  },
+  {
+    "id": "spring-009",
+    "topic": "Spring",
+    "subtopic": "Injection",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "스프링의 의존성 자동 주입 방법에는 무엇이 있을까요?",
+    "answer": {
+      "text": "대표적으로 생성자 주입, 수정자 주입, 필드 주입이 있습니다. 일반적으로는 불변성과 테스트 용이성 때문에 생성자 주입이 가장 권장됩니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "생성자 주입",
+        "수정자 주입",
+        "필드 주입"
+      ],
+      "optional": [
+        "불변성",
+        "테스트",
+        "권장"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 9
+  },
+  {
+    "id": "spring-010",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "@RequestParam, @RequestBody, @ModelAttribute의 차이를 설명해주세요.",
+    "answer": {
+      "text": "@RequestParam은 주로 쿼리 파라미터나 form 값을 단일 값으로 바인딩할 때 사용합니다. @RequestBody는 HTTP 요청 본문(JSON 등)을 객체로 변환할 때 사용하고, @ModelAttribute는 요청 파라미터를 객체 단위로 바인딩할 때 사용합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "쿼리 파라미터",
+        "요청 본문",
+        "객체 바인딩"
+      ],
+      "optional": [
+        "JSON",
+        "form",
+        "바인딩"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 10
+  },
+  {
+    "id": "spring-011",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "Servlet이란 무엇일까요?",
+    "answer": {
+      "text": "서블릿은 자바 기반 웹 애플리케이션에서 HTTP 요청과 응답을 처리하는 서버 측 컴포넌트입니다. 웹 컨테이너가 서블릿의 생성, 실행, 소멸을 관리합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "HTTP 요청",
+        "HTTP 응답",
+        "웹 컨테이너"
+      ],
+      "optional": [
+        "자바",
+        "서버 측",
+        "생명주기"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 11
+  },
+  {
+    "id": "spring-012",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "DispatcherServlet이란 무엇이며, Spring MVC의 동작 과정을 설명해주세요.",
+    "answer": {
+      "text": "DispatcherServlet은 Spring MVC의 프론트 컨트롤러로, 모든 요청을 중앙에서 받아 적절한 핸들러로 전달합니다. 이후 HandlerMapping, HandlerAdapter, Controller, ViewResolver 등을 거쳐 응답을 생성합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "프론트 컨트롤러",
+        "HandlerMapping",
+        "ViewResolver"
+      ],
+      "optional": [
+        "Controller",
+        "HandlerAdapter",
+        "중앙 처리"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 12
+  },
+  {
+    "id": "spring-013",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "Apache Tomcat이란 무엇일까요?",
+    "answer": {
+      "text": "Apache Tomcat은 자바 서블릿과 JSP를 실행할 수 있는 웹 애플리케이션 서버이자 서블릿 컨테이너입니다. Spring Boot에서는 내장 톰캣을 통해 별도 WAS 설치 없이 애플리케이션을 실행할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "서블릿 컨테이너",
+        "WAS",
+        "내장 톰캣"
+      ],
+      "optional": [
+        "JSP",
+        "Spring Boot",
+        "실행 환경"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 13
+  },
+  {
+    "id": "spring-014",
+    "topic": "Spring",
+    "subtopic": "Context",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "ApplicationContext와 ServletContext의 차이는 무엇인가요?",
+    "answer": {
+      "text": "ApplicationContext는 스프링 빈을 관리하는 IoC 컨테이너이고, ServletContext는 서블릿 컨테이너가 웹 애플리케이션 전반에서 공유하는 컨텍스트입니다. 전자는 스프링의 객체 관리에 집중하고, 후자는 웹 애플리케이션 환경 정보와 자원 공유에 가깝습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "ApplicationContext",
+        "ServletContext",
+        "IoC 컨테이너"
+      ],
+      "optional": [
+        "빈 관리",
+        "웹 애플리케이션",
+        "공유 자원"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 14
+  },
+  {
+    "id": "spring-015",
+    "topic": "Spring",
+    "subtopic": "Validation",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "@Valid 어노테이션은 무엇이며 어디서 동작할까요?",
+    "answer": {
+      "text": "@Valid는 전달받은 객체에 대해 Bean Validation 규칙을 적용해 검증을 수행할 때 사용합니다. 주로 컨트롤러 계층에서 요청 DTO를 바인딩한 뒤 검증하는 과정에서 동작합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "검증",
+        "Bean Validation",
+        "DTO"
+      ],
+      "optional": [
+        "컨트롤러",
+        "요청 바인딩",
+        "검증 규칙"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 15
+  },
+  {
+    "id": "spring-016",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "Filter와 Interceptor의 차이는 무엇일까요?",
+    "answer": {
+      "text": "Filter는 서블릿 스펙 기반으로 DispatcherServlet 이전 단계에서 동작하고, Interceptor는 스프링 MVC 기반으로 컨트롤러 호출 전후에 동작합니다. 따라서 Filter는 더 전역적인 요청 처리에 적합하고, Interceptor는 스프링 핸들러와 관련된 세밀한 제어에 적합합니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "DispatcherServlet 이전",
+        "컨트롤러 전후",
+        "서블릿 스펙"
+      ],
+      "optional": [
+        "전역 처리",
+        "Spring MVC",
+        "세밀한 제어"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 16
+  },
+  {
+    "id": "spring-017",
+    "topic": "Spring",
+    "subtopic": "Web",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "HandlerMethodArgumentResolver란 무엇일까요?",
+    "answer": {
+      "text": "HandlerMethodArgumentResolver는 컨트롤러 메서드 파라미터를 원하는 방식으로 해석해 값을 주입하는 컴포넌트입니다. 예를 들어 로그인 사용자 정보나 공통 객체를 어노테이션 기반으로 주입할 때 활용할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "컨트롤러 파라미터",
+        "값 주입",
+        "해석"
+      ],
+      "optional": [
+        "공통 객체",
+        "어노테이션",
+        "확장"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 17
+  },
+  {
+    "id": "spring-018",
+    "topic": "Spring",
+    "subtopic": "AOP",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "AOP란 무엇일까요?",
+    "answer": {
+      "text": "AOP는 핵심 관심사와 공통 관심사를 분리하기 위한 프로그래밍 패러다임입니다. 로깅, 보안, 트랜잭션처럼 여러 곳에서 반복되는 기능을 횡단 관심사로 분리해 재사용성과 유지보수성을 높입니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "공통 관심사",
+        "횡단 관심사",
+        "분리"
+      ],
+      "optional": [
+        "로깅",
+        "보안",
+        "트랜잭션"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 18
+  },
+  {
+    "id": "spring-019",
+    "topic": "Spring",
+    "subtopic": "Transaction",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "스프링의 트랜잭션에 대해 설명해주세요.",
+    "answer": {
+      "text": "트랜잭션은 하나의 논리적 작업을 모두 성공하거나 모두 실패하도록 보장하는 단위입니다. 스프링은 주로 @Transactional을 통해 선언적으로 트랜잭션을 관리하며, 예외 발생 시 롤백 정책을 적용할 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "@Transactional",
+        "롤백",
+        "논리적 작업 단위"
+      ],
+      "optional": [
+        "선언적 트랜잭션",
+        "원자성",
+        "예외"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 19
+  },
+  {
+    "id": "spring-020",
+    "topic": "Spring",
+    "subtopic": "Proxy",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "스프링의 프록시에 대해 설명해주세요.",
+    "answer": {
+      "text": "스프링은 AOP나 트랜잭션 같은 부가 기능을 적용하기 위해 프록시 객체를 사용합니다. 실제 대상 객체를 감싸는 프록시를 통해 메서드 호출 전후에 부가 로직을 넣을 수 있습니다.",
+      "bullets": []
+    },
+    "keywords": {
+      "required": [
+        "프록시 객체",
+        "부가 기능",
+        "AOP"
+      ],
+      "optional": [
+        "트랜잭션",
+        "대상 객체",
+        "메서드 호출"
+      ]
+    },
+    "isActive": true,
+    "sortOrder": 20
+  }
+]

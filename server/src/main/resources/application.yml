@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+
+  datasource:
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:40}
+      minimum-idle: ${DB_POOL_MIN_IDLE:10}
+      connection-timeout: ${DB_POOL_CONNECTION_TIMEOUT_MS:2000}
+      validation-timeout: ${DB_POOL_VALIDATION_TIMEOUT_MS:1000}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+
+app:
+  system-log:
+    enabled: ${SYSTEM_LOG_ENABLED:true}
+    auth-success-enabled: ${SYSTEM_LOG_AUTH_SUCCESS_ENABLED:false}
+    noisy-event-sample-rate: ${SYSTEM_LOG_NOISY_EVENT_SAMPLE_RATE:0.1}
+    executor:
+      core-size: ${SYSTEM_LOG_EXECUTOR_CORE_SIZE:2}
+      max-size: ${SYSTEM_LOG_EXECUTOR_MAX_SIZE:8}
+      queue-capacity: ${SYSTEM_LOG_EXECUTOR_QUEUE_CAPACITY:1000}

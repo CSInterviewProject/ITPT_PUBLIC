@@ -1,0 +1,179 @@
+[
+  {
+    "id": "c-001",
+    "topic": "C",
+    "subtopic": "기초",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "C 언어에서 포인터(Pointer)란 무엇이며, 어떻게 사용하나요?",
+    "answer": {
+      "text": "포인터는 다른 변수의 메모리 주소를 저장하는 변수입니다. '*' 연산자로 선언하고 역참조하며, '&' 연산자로 변수의 주소를 얻습니다.",
+      "bullets": [
+        "선언: int *p; — p는 int 형 변수의 주소를 저장",
+        "주소 연산자(&): int a = 10; p = &a; — p에 a의 주소 저장",
+        "역참조(*): *p = 20; — 포인터가 가리키는 주소의 값을 변경",
+        "포인터 연산: p+1은 sizeof(int)만큼 주소가 증가"
+      ]
+    },
+    "keywords": {
+      "required": ["포인터", "메모리 주소", "역참조", "&"],
+      "optional": ["포인터 연산", "NULL", "void 포인터"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-002",
+    "topic": "C",
+    "subtopic": "메모리",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C에서 malloc과 free를 사용한 동적 메모리 할당을 설명하고, 메모리 누수(Memory Leak)가 무엇인지 설명해주세요.",
+    "answer": {
+      "text": "malloc은 힙(Heap) 영역에서 지정한 크기의 메모리를 동적으로 할당하고 주소를 반환합니다. 사용이 끝난 메모리는 반드시 free로 해제해야 하며, 그렇지 않으면 메모리 누수가 발생합니다.",
+      "bullets": [
+        "malloc(size): 힙에서 size 바이트 할당, 초기화 없음 (쓰레기 값)",
+        "calloc(n, size): n*size 바이트 할당 후 0으로 초기화",
+        "realloc(ptr, size): 기존 블록의 크기를 변경",
+        "free(ptr): 할당된 메모리 해제 — 호출 안 하면 메모리 누수 발생",
+        "메모리 누수: 할당된 메모리를 free하지 않아 힙이 계속 늘어나는 현상"
+      ]
+    },
+    "keywords": {
+      "required": ["malloc", "free", "동적 메모리", "메모리 누수", "힙"],
+      "optional": ["calloc", "realloc", "NULL 체크"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-003",
+    "topic": "C",
+    "subtopic": "포인터",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C에서 포인터와 배열의 관계를 설명하고, 포인터 산술 연산을 예시와 함께 설명해주세요.",
+    "answer": {
+      "text": "C에서 배열 이름은 배열의 첫 번째 원소를 가리키는 포인터와 동일하게 동작합니다. arr[i]는 *(arr + i)와 완전히 동일한 표현입니다.",
+      "bullets": [
+        "int arr[5] = {1,2,3,4,5}; — arr은 &arr[0]과 동일",
+        "포인터 산술: int *p = arr; p+2는 arr[2]의 주소 (4바이트씩 이동)",
+        "차이점: 배열 이름은 상수 포인터라 재할당 불가, sizeof(arr)는 전체 크기 반환",
+        "함수 인자로 전달 시 배열은 포인터로 decay — sizeof로 크기 알 수 없어 별도 전달 필요"
+      ]
+    },
+    "keywords": {
+      "required": ["포인터", "배열", "포인터 산술", "decay"],
+      "optional": ["arr[i]", "*(arr+i)", "sizeof"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-004",
+    "topic": "C",
+    "subtopic": "메모리 구조",
+    "type": "QA",
+    "difficulty": 2,
+    "question": "C 프로그램의 메모리 영역(Stack, Heap, Data, Code)을 설명해주세요.",
+    "answer": {
+      "text": "C 프로그램의 메모리는 크게 코드(텍스트), 데이터, 힙, 스택 영역으로 나뉩니다.",
+      "bullets": [
+        "코드(Text) 영역: 실행할 프로그램의 기계어 코드 저장, 읽기 전용",
+        "데이터(Data) 영역: 전역 변수·정적 변수 저장 — BSS(초기화 안 된 것), Data(초기화된 것)",
+        "힙(Heap) 영역: malloc/free로 관리하는 동적 메모리, 낮은 주소에서 높은 주소로 증가",
+        "스택(Stack) 영역: 지역 변수·함수 호출 정보(리턴 주소·매개변수) 저장, 높은 주소에서 낮은 주소로 증가"
+      ]
+    },
+    "keywords": {
+      "required": ["스택", "힙", "데이터 영역", "코드 영역"],
+      "optional": ["BSS", "전역 변수", "지역 변수", "정적 변수"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-005",
+    "topic": "C",
+    "subtopic": "구조체",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "C의 구조체(struct)란 무엇이며, 구조체 패딩(Padding)이 발생하는 이유를 설명해주세요.",
+    "answer": {
+      "text": "구조체는 서로 다른 타입의 변수를 하나로 묶어 새로운 타입을 정의하는 문법입니다. 구조체 패딩은 CPU가 메모리에 효율적으로 접근하기 위해 멤버 사이에 빈 공간을 삽입하는 것입니다.",
+      "bullets": [
+        "struct Point { int x; int y; }; — 두 int를 묶어 하나의 타입으로",
+        "패딩 발생 이유: CPU가 자신의 크기의 배수 주소에서만 데이터를 읽을 수 있도록 정렬(alignment)",
+        "struct { char a; int b; }; — a(1바이트) 뒤에 3바이트 패딩 삽입 → 총 8바이트",
+        "#pragma pack 또는 __attribute__((packed))로 패딩 제거 가능 (성능 저하 주의)"
+      ]
+    },
+    "keywords": {
+      "required": ["구조체", "패딩", "메모리 정렬", "alignment"],
+      "optional": ["pragma pack", "packed", "sizeof"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-006",
+    "topic": "C",
+    "subtopic": "전처리기",
+    "type": "QA",
+    "difficulty": 1,
+    "question": "C의 전처리기 지시자(Preprocessor Directive) #define과 #include를 설명해주세요.",
+    "answer": {
+      "text": "전처리기 지시자는 컴파일 전에 소스 코드를 변환하는 명령입니다. #include는 헤더 파일을 삽입하고, #define은 매크로를 정의합니다.",
+      "bullets": [
+        "#include <stdio.h>: 표준 라이브러리 헤더 포함 / #include \"myfile.h\": 사용자 정의 헤더 포함",
+        "#define PI 3.14159: 상수 매크로 — 컴파일 전 텍스트 치환",
+        "#define MAX(a,b) ((a)>(b)?(a):(b)): 함수형 매크로 — 타입 독립적이지만 부작용 주의",
+        "헤더 가드(#ifndef, #define, #endif)로 중복 포함 방지"
+      ]
+    },
+    "keywords": {
+      "required": ["전처리기", "#define", "#include", "매크로"],
+      "optional": ["헤더 가드", "#ifndef", "텍스트 치환"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-007",
+    "topic": "C",
+    "subtopic": "함수 포인터",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "C에서 함수 포인터(Function Pointer)란 무엇이며, 어떤 경우에 활용되는지 설명해주세요.",
+    "answer": {
+      "text": "함수 포인터는 함수의 시작 주소를 저장하는 포인터로, 런타임에 호출할 함수를 동적으로 결정할 수 있습니다.",
+      "bullets": [
+        "선언: int (*fp)(int, int); — int를 두 개 받아 int를 반환하는 함수를 가리키는 포인터",
+        "대입: fp = add; — 함수 이름 자체가 주소",
+        "활용: 콜백 함수, qsort 비교 함수, 전략 패턴, 함수 테이블(디스패치 테이블)",
+        "typedef로 가독성 향상: typedef int (*Comparator)(int, int);"
+      ]
+    },
+    "keywords": {
+      "required": ["함수 포인터", "콜백", "런타임"],
+      "optional": ["qsort", "typedef", "디스패치 테이블", "전략 패턴"]
+    },
+    "isActive": true
+  },
+  {
+    "id": "c-008",
+    "topic": "C",
+    "subtopic": "undefined behavior",
+    "type": "QA",
+    "difficulty": 3,
+    "question": "C에서 정의되지 않은 동작(Undefined Behavior)이란 무엇이며, 대표적인 예시를 들어 설명해주세요.",
+    "answer": {
+      "text": "정의되지 않은 동작(UB)은 C 표준이 동작을 명시하지 않는 코드로, 컴파일러가 어떤 결과를 내놓더라도 표준에 위반되지 않습니다. 이는 예측 불가능한 버그와 보안 취약점의 원인이 됩니다.",
+      "bullets": [
+        "널 포인터 역참조: int *p = NULL; *p = 1; — 크래시 또는 예측 불가 동작",
+        "범위를 벗어난 배열 접근: int arr[5]; arr[10] = 1; — 메모리 오염",
+        "해제된 메모리 사용(Use After Free): free(p) 후 *p 접근",
+        "부호 있는 정수 오버플로우: INT_MAX + 1 — UB (부호 없는 정수는 wrap-around 정의됨)"
+      ]
+    },
+    "keywords": {
+      "required": ["정의되지 않은 동작", "UB", "널 포인터", "Use After Free"],
+      "optional": ["오버플로우", "메모리 오염", "보안 취약점"]
+    },
+    "isActive": true
+  }
+]

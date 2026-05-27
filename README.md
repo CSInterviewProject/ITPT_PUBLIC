@@ -1,9 +1,9 @@
 <table width="100%">
   <tr>
-    <td align="center" width="25%"><a href="https://youtu.be/">시연 영상<br/>(예정)</a></td>
+    <td align="center" width="25%"><a href="https://youtu.be/8fGrmMGGxuA">시연 영상<br/></a></td>
     <td align="center" width="25%"><a href="https://itptapp.com">ITPT 링크</a></td>
     <td align="center" width="25%"><a href="submission/ITPT_poster.pdf">Poster PDF</a></td>
-    <td align="center" width="25%"><a href="submission/ITPT_project_report.pdf">프로젝트 결과 보고서<br/>PDF (예정)</a></td>
+    <td align="center" width="25%"><a href="submission/ITPT_project_report.pdf">프로젝트 결과 보고서<br/>PDF</a></td>
   </tr>
 </table>
 

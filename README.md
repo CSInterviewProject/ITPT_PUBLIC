@@ -148,10 +148,3 @@ ITPT는 이 문제를 해결하기 위해 만들어졌습니다.
 
 
 ---
-
-## 자료
-
-- 프로젝트 결과물(소스 코드/개발 문서): `client/`, `server/`, `README.md`
-- 발표자료 또는 포스터 PDF: [ITPT Poster PDF](submission/ITPT_poster.pdf)
-- 프로젝트 결과 보고서 PDF: `submission/ITPT_project_report.pdf` (업로드 예정)
-- 시연 영상 링크(YouTube 등): `https://youtu.be/` 형식 링크 추가 예정

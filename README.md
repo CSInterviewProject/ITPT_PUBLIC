@@ -1,13 +1,16 @@
 <table>
   <tr>
     <td align="center" width="33%">
-      <a href="submission/ITPT_poster.pdf">Poster PDF</a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://youtu.be/">시연 영상</a>
+      <a href="https://youtu.be/">시연 영상(예정)</a>
     </td>
     <td align="center" width="33%">
       <a href="https://itptapp.com">ITPT 링크</a>
+    </td>
+    <td align="center" width="33%">
+      <a href="submission/ITPT_poster.pdf">Poster PDF</a>
+    </td>
+    <td align="center" width="33%">
+      <a href="submission/ITPT_project_report.pdf">프로젝트 결과 보고서 PDF(예정)</a>
     </td>
   </tr>
 </table>
